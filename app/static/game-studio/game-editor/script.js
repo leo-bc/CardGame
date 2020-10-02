@@ -9,7 +9,7 @@ async function loadGame() {
             for (var j = 0; j < game.Players[i].CardIDs.length; j++) {
                 var card = await sendGET("/card/" + game.Players[i].CardIDs[j]);
                 console.log(card);
-                document.getElementById("bitch-input").innerHTML += "Card: " + card.Title + "</br>";
+                document.getElementById("bitch-input").innerHTML += "Card:" + card.Title + "</br>";
             }
             document.getElementById("bitch-input").innerHTML += "</br>";
         }
