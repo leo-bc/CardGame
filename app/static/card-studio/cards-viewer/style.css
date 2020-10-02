@@ -1,0 +1,13 @@
+.card {
+    height: 300px;
+    width: 300px;
+    background-color: lime;
+    float: left;
+    margin: 10px;
+    padding: 10px;
+}
+
+#card-list {
+    background-color: red;
+    overflow: hidden;
+}
