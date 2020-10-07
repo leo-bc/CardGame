@@ -1,0 +1,278 @@
+[
+    {
+        "Title": "Alakazam",
+        "HP": 80
+    },
+    {
+        "Title": "Blastoise",
+        "HP": 100
+    },
+    {
+        "Title": "Chansey",
+        "HP": 120
+    },
+    {
+        "Title": "Charizard",
+        "HP": 120
+    },
+    {
+        "Title": "Clefairy",
+        "HP": 40
+    },
+    {
+        "Title": "Gyarados",
+        "HP": 100
+    },
+    {
+        "Title": "Hitmonchan",
+        "HP": 70
+    },
+    {
+        "Title": "Machamp",
+        "HP": 100
+    },
+    {
+        "Title": "Magneton",
+        "HP": 60
+    },
+    {
+        "Title": "Mewtwo",
+        "HP": 60
+    },
+    {
+        "Title": "Nidoking",
+        "HP": 90
+    },
+    {
+        "Title": "Ninetales",
+        "HP": 80
+    },
+    {
+        "Title": "Poliwrath",
+        "HP": 90
+    },
+    {
+        "Title": "Raichu",
+        "HP": 80
+    },
+    {
+        "Title": "Venusaur",
+        "HP": 100
+    },
+    {
+        "Title": "Zapdos",
+        "HP": 90
+    },
+    {
+        "Title": "Beedrill",
+        "HP": 80
+    },
+    {
+        "Title": "Dragonair",
+        "HP": 80
+    },
+    {
+        "Title": "Dugtrio",
+        "HP": 70
+    },
+    {
+        "Title": "Electabuzz",
+        "HP": 70
+    },
+    {
+        "Title": "Electrode",
+        "HP": 80
+    },
+    {
+        "Title": "Pidgeotto",
+        "HP": 60
+    },
+    {
+        "Title": "Arcanine",
+        "HP": 100
+    },
+    {
+        "Title": "Charmeleon",
+        "HP": 80
+    },
+    {
+        "Title": "Dewgong",
+        "HP": 80
+    },
+    {
+        "Title": "Dratini",
+        "HP": 40
+    },
+    {
+        "Title": "Farfetch'd",
+        "HP": 50
+    },
+    {
+        "Title": "Growlithe",
+        "HP": 60
+    },
+    {
+        "Title": "Haunter",
+        "HP": 60
+    },
+    {
+        "Title": "Ivysaur",
+        "HP": 60
+    },
+    {
+        "Title": "Jynx",
+        "HP": 70
+    },
+    {
+        "Title": "Kadabra",
+        "HP": 60
+    },
+    {
+        "Title": "Kakuna",
+        "HP": 80
+    },
+    {
+        "Title": "Machoke",
+        "HP": 80
+    },
+    {
+        "Title": "Magikarp",
+        "HP": 30
+    },
+    {
+        "Title": "Magmar",
+        "HP": 50
+    },
+    {
+        "Title": "Nidorino",
+        "HP": 60
+    },
+    {
+        "Title": "Poliwhirl",
+        "HP": 60
+    },
+    {
+        "Title": "Porygon",
+        "HP": 30
+    },
+    {
+        "Title": "Raticate",
+        "HP": 60
+    },
+    {
+        "Title": "Seel",
+        "HP": 60
+    },
+    {
+        "Title": "Wartortle",
+        "HP": 70
+    },
+    {
+        "Title": "Abra",
+        "HP": 30
+    },
+    {
+        "Title": "Bulbasaur",
+        "HP": 40
+    },
+    {
+        "Title": "Caterpie",
+        "HP": 40
+    },
+    {
+        "Title": "Charmander",
+        "HP": 50
+    },
+    {
+        "Title": "Diglett",
+        "HP": 30
+    },
+    {
+        "Title": "Doduo",
+        "HP": 50
+    },
+    {
+        "Title": "Drowzee",
+        "HP": 50
+    },
+    {
+        "Title": "Gastly",
+        "HP": 30
+    },
+    {
+        "Title": "Koffing",
+        "HP": 50
+    },
+    {
+        "Title": "Machop",
+        "HP": 50
+    },
+    {
+        "Title": "Magnemite",
+        "HP": 40
+    },
+    {
+        "Title": "Metapod",
+        "HP": 70
+    },
+    {
+        "Title": "Nidoran\u00e2\u2122\u201a",
+        "HP": 40
+    },
+    {
+        "Title": "Onix",
+        "HP": 90
+    },
+    {
+        "Title": "Pidgey",
+        "HP": 40
+    },
+    {
+        "Title": "Pikachu",
+        "HP": 40
+    },
+    {
+        "Title": "Poliwag",
+        "HP": 40
+    },
+    {
+        "Title": "Ponyta",
+        "HP": 40
+    },
+    {
+        "Title": "Rattata",
+        "HP": 30
+    },
+    {
+        "Title": "Sandshrew",
+        "HP": 40
+    },
+    {
+        "Title": "Squirtle",
+        "HP": 40
+    },
+    {
+        "Title": "Starmie",
+        "HP": 60
+    },
+    {
+        "Title": "Staryu",
+        "HP": 40
+    },
+    {
+        "Title": "Tangela",
+        "HP": 50
+    },
+    {
+        "Title": "Voltorb",
+        "HP": 40
+    },
+    {
+        "Title": "Vulpix",
+        "HP": 50
+    },
+    {
+        "Title": "Weedle",
+        "HP": 40
+    }
+]

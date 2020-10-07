@@ -8,10 +8,56 @@ import (
 
 	"./lio"
 	"./model"
+	"github.com/gorilla/securecookie"
 	"github.com/julienschmidt/httprouter"
 )
 
 var state model.State
+var cookieEncoder *securecookie.SecureCookie
+
+func main() {
+	state = model.GetExampleState()
+	createRouter()
+}
+
+func createRouter() {
+	var hashKey = []byte("15989999955333994")
+	var blockKey = []byte("1234567812345678")
+	cookieEncoder = securecookie.New(hashKey, blockKey)
+
+	router := httprouter.New()
+	router.GET("/", GETIndex)
+	router.GET("/state", GETState)
+	router.GET("/player/:id", GETPlayer)
+	router.GET("/current-player/", GETCurrentPlayer)
+	router.GET("/players/", GETPlayers)
+	router.POST("/select-player/:id", POSTSelectPlayer)
+	router.GET("/selected-player/", GETSelectedPlayer)
+	router.GET("/game/:id", GETGame)
+	router.GET("/battle/:game-id/:battle-id", GETBattle)
+	router.GET("/battle-side/:game-id/:battle-id/:side-id", GETBattleSide)
+	router.GET("/card/:id", GETCard)
+	router.GET("/cards/:game-id", GETCards)
+	router.POST("/draw-card/:game-id/:battle-id", POSTDrawCard)
+
+	router.POST("/card/:id", POSTCard)
+	router.GET("/create-card/", GETCreateCard)
+	router.POST("/remove-card/:id", POSTRemoveCard)
+
+	// for debugging purposes
+	router.ServeFiles("/static/*filepath", http.Dir("./static/"))
+
+	log.Printf("starting server at http://localhost:10001\n")
+	log.Fatal(http.ListenAndServe(":10001", router))
+}
+
+// POSTSelectPlayer :
+func POSTSelectPlayer(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
+	playerID := getIntParam(ps, "id")
+	idString := strconv.Itoa(playerID)
+	lio.SetCookie(cookieEncoder, w, "player-id", idString)
+	lio.HandlePOSTResponse(w)
+}
 
 // GETIndex : redirect to the actual homepage for ease of use
 func GETIndex(w http.ResponseWriter, r *http.Request, _ httprouter.Params) {
@@ -26,7 +72,7 @@ func GETState(w http.ResponseWriter, r *http.Request, _ httprouter.Params) {
 
 // GETCard :
 func GETCard(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
-	index := getIndexFromID(getCardIDs(), getIntParam(ps, "id"))
+	index := model.GetIndexFromID(model.GetCardIDs(state), getIntParam(ps, "id"))
 
 	if index != -1 {
 		lio.HandleGETResponse(w, state.Cards[index].Info)
@@ -37,7 +83,7 @@ func GETCard(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
 
 // GETGame :
 func GETGame(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
-	index := getIndexFromID(getGameIDs(), getIntParam(ps, "id"))
+	index := model.GetIndexFromID(model.GetGameIDs(state), getIntParam(ps, "id"))
 
 	if index != -1 {
 		lio.HandleGETResponse(w, state.Games[index].Info)
@@ -46,9 +92,60 @@ func GETGame(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
 	}
 }
 
+// GETBattle :
+func GETBattle(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
+	gameID := getIntParam(ps, "game-id")
+	battleID := getIntParam(ps, "battle-id")
+
+	if gameID != -1 && battleID != -1 {
+		lio.HandleGETResponse(w, state.Games[gameID].Info.Battles[battleID])
+	} else {
+		lio.HandleGETResponse(w, "")
+	}
+}
+
+// GETBattleSide :
+func GETBattleSide(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
+	gameID := getIntParam(ps, "game-id")
+	battleID := getIntParam(ps, "battle-id")
+	sideID := getIntParam(ps, "side-id")
+	if gameID != -1 && battleID != -1 {
+		battle := state.Games[gameID].Info.Battles[battleID]
+		var side model.BattleSide
+		if sideID == 0 {
+			side = battle.FirstSide
+		} else {
+			side = battle.SecondSide
+		}
+		playerID, _ := strconv.Atoi(lio.ReadCookie(cookieEncoder, r, "player-id"))
+		var sideInfo model.PlayerBattleSideInfo
+		if side.PlayerID == playerID {
+			sideInfo = model.PlayerBattleSideInfo{IsPlayer: true, Info: side.Info}
+		} else {
+			sideInfo = model.PlayerBattleSideInfo{IsPlayer: false, Info: side.Info}
+		}
+		lio.HandleGETResponse(w, sideInfo)
+	} else {
+		lio.HandleGETResponse(w, "")
+	}
+}
+
+// GETCurrentPlayer :
+func GETCurrentPlayer(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
+	id, _ := strconv.Atoi(lio.ReadCookie(cookieEncoder, r, "player-id"))
+	index := model.GetIndexFromID(model.GetPlayerIDs(state), id)
+
+	if index != -1 {
+		lio.HandleGETResponse(w, state.Players[index].Info)
+	} else {
+		lio.HandleGETResponse(w, "")
+	}
+}
+
 // GETPlayer :
 func GETPlayer(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
-	index := getIndexFromID(getPlayerIDs(), getIntParam(ps, "id"))
+	id := getIntParam(ps, "id")
+	index := model.GetIndexFromID(model.GetPlayerIDs(state), id)
 
 	if index != -1 {
 		lio.HandleGETResponse(w, state.Players[index].Info)
@@ -64,7 +161,22 @@ func GETPlayers(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
 
 // GETCards :
 func GETCards(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
-	lio.HandleGETResponse(w, state.Cards)
+	gameID := getIntParam(ps, "game-id")
+	if gameID >= 0 && gameID < len(state.Games) {
+		game := state.Games[gameID]
+
+		playerID, _ := strconv.Atoi(lio.ReadCookie(cookieEncoder, r, "player-id"))
+		playerIndex := model.GetIndexFromID(model.GetPlayerIDs(state), playerID)
+		cardIDs := game.Info.Players[playerIndex].CardIDs
+
+		var cards []model.Card
+		for i := 0; i < len(cardIDs); i++ {
+			cardID := model.GetIndexFromID(model.GetCardIDs(state), cardIDs[i])
+			cards = append(cards, state.Cards[cardID])
+		}
+
+		lio.HandleGETResponse(w, cards)
+	}
 }
 
 // POSTCard :
@@ -72,7 +184,7 @@ func POSTCard(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
 	var info model.CardInfo
 	lio.DecodePOSTBody(r, &info)
 	cardID := getIntParam(ps, "id")
-	index := getIndexFromID(getCardIDs(), cardID)
+	index := model.GetIndexFromID(model.GetCardIDs(state), cardID)
 
 	if index != -1 {
 		state.Cards[index].Info = info
@@ -80,9 +192,26 @@ func POSTCard(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
 	lio.HandlePOSTResponse(w)
 }
 
+// POSTDrawCard :
+func POSTDrawCard(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
+	playerID, _ := strconv.Atoi(lio.ReadCookie(cookieEncoder, r, "player-id"))
+	playerIndex := model.GetIndexFromID(model.GetPlayerIDs(state), playerID)
+	gameIndex := model.GetIndexFromID(model.GetGameIDs(state), getIntParam(ps, "game-id"))
+	battleID := getIntParam(ps, "battle-id")
+
+	battle := state.Games[gameIndex].Info.Battles[battleID]
+	if battle.FirstSide.PlayerID == playerIndex {
+		model.DrawCard(&battle.FirstSide.Info)
+	} else if battle.SecondSide.PlayerID == playerIndex {
+		model.DrawCard(&battle.SecondSide.Info)
+	}
+	state.Games[gameIndex].Info.Battles[battleID] = battle
+	lio.HandlePOSTResponse(w)
+}
+
 // GETCreateCard :
 func GETCreateCard(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
-	newCard := getNewCard()
+	newCard := model.GetNewCard(state)
 	state.Cards = append(state.Cards, newCard)
 	lio.HandleGETResponse(w, newCard.ID)
 }
@@ -100,125 +229,12 @@ func POSTRemoveCard(w http.ResponseWriter, r *http.Request, ps httprouter.Params
 	lio.HandlePOSTResponse(w)
 }
 
+// GETSelectedPlayer :
+func GETSelectedPlayer(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
+	lio.HandleGETResponse(w, lio.ReadCookie(cookieEncoder, r, "player-id"))
+}
+
 func getIntParam(ps httprouter.Params, name string) int {
 	value, _ := strconv.Atoi(ps.ByName(name))
 	return value
-}
-
-func getCardIDs() []model.IDable {
-	var list []model.IDable
-	for i := 0; i < len(state.Cards); i++ {
-		list = append(list, state.Cards[i].IDable)
-	}
-	return list
-}
-
-func getPlayerIDs() []model.IDable {
-	var list []model.IDable
-	for i := 0; i < len(state.Players); i++ {
-		list = append(list, state.Players[i].IDable)
-	}
-	return list
-}
-
-func getGameIDs() []model.IDable {
-	var list []model.IDable
-	for i := 0; i < len(state.Games); i++ {
-		list = append(list, state.Games[i].IDable)
-	}
-	return list
-}
-
-func getNewCard() model.Card {
-	index := getNewID(getCardIDs())
-	return model.Card{IDable: model.IDable{ID: index}, Info: model.CardInfo{Title: "New Card", HP: 10}}
-}
-
-func getNewPlayer() model.Player {
-	index := getNewID(getPlayerIDs())
-	return model.Player{IDable: model.IDable{ID: index}, Info: model.PlayerInfo{Name: "New Player"}}
-}
-
-func getNewGame() model.Game {
-	index := getNewID(getGameIDs())
-	return model.Game{IDable: model.IDable{ID: index}, Info: model.GameInfo{Title: "New Game", Players: []model.PlayerGameLink{}}}
-}
-
-func getNewID(list []model.IDable) int {
-	if len(list) == 0 {
-		return 0
-	}
-	return list[len(list)-1].ID + 1
-}
-
-func getIndexFromID(list []model.IDable, id int) int {
-	for i := 0; i < len(list); i++ {
-		if list[i].ID == id {
-			return i
-		}
-	}
-	return -1
-}
-
-func main() {
-	state = model.State{Games: []model.Game{}, Players: []model.Player{}, Cards: []model.Card{}}
-
-	card1 := getNewCard()
-	card1.Info.Title = "Leo"
-	card1.Info.HP = 20
-
-	state.Cards = append(state.Cards, card1)
-
-	card2 := getNewCard()
-	card2.Info.Title = "Jop"
-
-	state.Cards = append(state.Cards, card2)
-
-	card3 := getNewCard()
-	card3.Info.Title = "Ark"
-
-	state.Cards = append(state.Cards, card3)
-
-	player1 := getNewPlayer()
-	player1.Info.Name = "dj leo"
-
-	state.Players = append(state.Players, player1)
-
-	player2 := getNewPlayer()
-	player2.Info.Name = "funky kong"
-
-	state.Players = append(state.Players, player2)
-
-	player3 := getNewPlayer()
-	player3.Info.Name = "richard"
-
-	state.Players = append(state.Players, player3)
-
-	game1 := getNewGame()
-	game1.Info.Title = "Cool game!"
-
-	link1 := model.PlayerGameLink{PlayerID: 0, CardIDs: []int{0}}
-	link2 := model.PlayerGameLink{PlayerID: 1, CardIDs: []int{1, 2}}
-	link3 := model.PlayerGameLink{PlayerID: 2, CardIDs: []int{}}
-
-	game1.Info.Players = append(game1.Info.Players, link1, link2, link3)
-	state.Games = append(state.Games, game1)
-
-	router := httprouter.New()
-	router.GET("/", GETIndex)
-	router.GET("/state", GETState)
-	router.GET("/player/:id", GETPlayer)
-	router.GET("/players/", GETPlayers)
-	router.GET("/game/:id", GETGame)
-	router.GET("/card/:id", GETCard)
-	router.GET("/cards/", GETCards)
-	router.POST("/card/:id", POSTCard)
-	router.GET("/create-card/", GETCreateCard)
-	router.POST("/remove-card/:id", POSTRemoveCard)
-
-	// for debugging purposes
-	router.ServeFiles("/static/*filepath", http.Dir("./static/"))
-
-	log.Printf("starting server at http://localhost:10001\n")
-	log.Fatal(http.ListenAndServe(":10001", router))
 }

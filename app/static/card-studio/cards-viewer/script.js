@@ -1,5 +1,6 @@
 async function loadCards() {
-    var cards = await sendGET("/cards/");
+    var cards = await sendGET("/cards/" + gameID);
+    console.log(cards);
     var list = document.getElementById("card-list");
     list.innerHTML = '';
 
@@ -8,6 +9,7 @@ async function loadCards() {
         for (var i = 0; i < cards.length; i++) {
             var clone = prefab.cloneNode(true);
             clone.hidden = false;
+            clone.dataset.id = cards[i].ID;
             clone.id = `card-${cards[i].ID}`;
             clone.querySelector("#title-text").innerHTML = cards[i].Info.Title;
             clone.querySelector("#hp-text").innerHTML = cards[i].Info.HP;
@@ -26,18 +28,29 @@ async function createCard() {
 }
 
 async function removeCard(element) {
-    var id = getID(element);
+    var id = element.dataset.id;
     await sendPOST(`/remove-card/${id}`);
     loadCards();
 }
 
-function getID(element) {
-    return parseInt(element.id.split("-")[1]);
-}
-
 function editCard(element) {
-    var id = getID(element);
+    var id = element.dataset.id;
     window.location.href = `/static/card-studio/card-editor?id=${id}/`;
 }
 
-loadCards();
+async function setPlayerName() {
+    var player = await sendGET("/current-player/");
+    document.getElementById("name-text").innerHTML = player.Name;
+}
+
+
+setPlayerName();
+
+const queryString = window.location.search;
+const urlParams = new URLSearchParams(queryString);
+var gameID = urlParams.get("game-id");
+if (gameID != null) {
+    loadCards(gameID);
+} else {
+    document.innerHTML = "euh";
+}

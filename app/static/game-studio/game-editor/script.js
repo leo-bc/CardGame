@@ -2,18 +2,24 @@ async function loadGame() {
     var game = await sendGET("/game/" + gameID);
     console.log(game);
     if (game != "") {
-        document.getElementById("title-input").value = game.Title;
+        document.getElementById("title-text").innerHTML = game.Title;
+        var prefab = document.getElementById("player-prefab");
+        var list = document.getElementById("player-list");
         for (var i = 0; i < game.Players.length; i++) {
-            var player = await sendGET("/player/" + game.Players[i].PlayerID);
-            document.getElementById("bitch-input").innerHTML += player.Name + ":</br>";
-            for (var j = 0; j < game.Players[i].CardIDs.length; j++) {
-                var card = await sendGET("/card/" + game.Players[i].CardIDs[j]);
-                console.log(card);
-                document.getElementById("bitch-input").innerHTML += "Card:" + card.Title + "</br>";
-            }
-            document.getElementById("bitch-input").innerHTML += "</br>";
+            var playerID = game.Players[i].PlayerID;
+            var player = await sendGET("/player/" + playerID);
+
+            var clone = prefab.cloneNode(true);
+            clone.hidden = false;
+            clone.dataset.id = playerID;
+            clone.id = `player-${playerID}`;
+            clone.querySelector("#name-text").innerHTML = player.Name;
+            var r = Math.floor((playerID * 323.4334) % 64);
+            var g = Math.floor((playerID * 123.74) % 64);
+            var b = Math.floor((playerID * 523.434) % 64);
+            clone.style.backgroundColor = `rgb(${r + 128}, ${g + 128}, ${b + 128})`;
+            list.appendChild(clone);
         }
-        // document.getElementById("hp-input").value = card.HP;
     } else {
         document.getElementById("editor-box").innerHTML = "game DOES NOT EXIST";
     }

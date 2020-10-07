@@ -21,12 +21,13 @@ async function createCard() {
 }
 
 function toOverview() {
-    window.location.href = `/static/card-studio/cards-viewer/`;
+    window.location.href = `/static/card-studio/cards-viewer/?game-id=${gameID}`;
 }
 
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 var cardID = urlParams.get("id");
-if (cardID != null) {
+var gameID = urlParams.get("id");
+if (cardID != null && gameID != null) {
     loadCard(urlParams.get("id"));
 }

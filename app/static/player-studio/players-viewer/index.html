@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+
+<html>
+<link href='style.css' rel='stylesheet' />
+
+<body>
+    <a href="/static/card-studio/cards-viewer/">Edit cards</a>
+    <div id="player-prefab" class="player" data-id="-1" hidden>
+        <h2>Name:</h2>
+        <p id="name-text"></p>
+        <button onclick="choosePlayer(this.parentElement)">Choose player</button>
+    </div>
+    <div id="player-list"></div>
+</body>
+<script src="../../IO.js"></script>
+<script src="../../model.js"></script>
+<script src="script.js"></script>
+
+</html>
