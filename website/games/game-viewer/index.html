@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+
+<html>
+
+<body>
+    <h2>Title:</h2>
+    <p id="title-text">d</p>
+
+    <h2>Players</h2>
+    <div id="player-prefab" class="player" data-id="-1" hidden>
+        <h2>Name:</h2>
+        <p id="name-text"></p>
+        <p id="ready-text"></p>
+        <button id="ready-button" onclick="setReady()" hidden>Ready</button>
+    </div>
+    <div id="player-list"></div>
+    <button id="join-game-button" onclick="joinGame()" disabled>Join game</button>
+    <button id="leave-game-button" onclick="leaveGame()" disabled>Leave game</button>
+</body>
+<script src="../../IO.js"></script>
+<script src="script.js"></script>
+
+</html>

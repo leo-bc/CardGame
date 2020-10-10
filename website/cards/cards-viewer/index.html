@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+
+<html>
+<link href='style.css' rel='stylesheet' />
+
+<body>
+    <p>Player: </p>
+    <p id="name-text"></p>
+    <button onclick="createCard()">Create card</button>
+    <div id="card-prefab" class="card" data-id="-1" hidden>
+        <h2>Title:</h2>
+        <p id="title-text"></p>
+        <h2>HP:</h2>
+        <p id="hp-text"></p>
+        <button onclick="editCard(this.parentElement)">Edit card</button>
+        <button onclick="removeCard(this.parentElement)">Remove card</button>
+    </div>
+    <div id="card-list"></div>
+</body>
+<script src="../../IO.js"></script>
+<script src="../../model.js"></script>
+<script src="script.js"></script>
+
+</html>
