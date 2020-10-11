@@ -12,11 +12,15 @@ async function loadCards() {
             clone.dataset.id = cards[i].ID;
             clone.id = `card-${cards[i].ID}`;
             clone.querySelector("#title-text").innerHTML = cards[i].Info.Title;
-            clone.querySelector("#hp-text").innerHTML = cards[i].Info.HP;
-            var r = Math.floor((cards[i].ID * 323.4334) % 64);
-            var g = Math.floor((cards[i].ID * 123.74) % 64);
-            var b = Math.floor((cards[i].ID * 523.434) % 64);
-            clone.style.backgroundColor = `rgb(${r + 128}, ${g + 128}, ${b + 128})`;
+            clone.querySelector("#card-type-text").innerHTML = cards[i].Info.CardType;
+            clone.querySelector("#description-text").innerHTML = cards[i].Info.Description;
+            if (cards[i].Info.Ranking == "Legend") {
+                clone.style.backgroundColor = '#dbc96e';
+            } else if (cards[i].Info.Ranking == "Rare") {
+                clone.style.backgroundColor = '#ababab';
+            } else {
+                clone.style.backgroundColor = '#b8946a';
+            }
             list.appendChild(clone);
         }
     }
@@ -26,6 +30,11 @@ async function createCard() {
     await sendGET("/create-card/");
     loadCards();
 }
+
+function backToGame() {
+    window.location.href = "/website/games/game-viewer/?id=" + gameID
+}
+
 
 async function removeCard(element) {
     var id = element.dataset.id;

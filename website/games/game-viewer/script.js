@@ -46,6 +46,7 @@ async function showGame() {
                 readyText.innerHTML = "Game has started";
                 document.getElementById("join-game-button").hidden = true;
                 document.getElementById("leave-game-button").hidden = true;
+                document.getElementById("view-deck-button").hidden = false;
             }
 
             list.appendChild(clone);
@@ -58,6 +59,10 @@ async function showGame() {
 async function setReady() {
     await sendPOST("/set-ready/" + gameID);
     await refresh();
+}
+
+function viewDeck() {
+    window.location.href = "/website/cards/cards-viewer/?game-id=" + gameID;
 }
 
 async function loadCurrentPlayer() {
