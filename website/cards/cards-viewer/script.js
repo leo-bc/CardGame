@@ -32,7 +32,7 @@ async function createCard() {
 }
 
 function backToGame() {
-    window.location.href = "/website/games/game-viewer/?id=" + gameID
+    window.location.href = "/website/games/game-viewer/?id=" + gameID;
 }
 
 

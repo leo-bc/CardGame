@@ -1,59 +1,88 @@
 async function showGame() {
     var game = await sendGET("/game/" + gameID);
-    var list = document.getElementById("player-list");
-    list.innerHTML = "";
+    var playerListElement = document.getElementById("player-list");
+    playerListElement.innerHTML = "";
     if (game != "") {
         document.getElementById("title-text").innerHTML = game.Title;
-        var prefab = document.getElementById("player-prefab");
 
-        document.getElementById("join-game-button").disabled = false;
-        document.getElementById("leave-game-button").disabled = true;
+        await showPlayers(game, playerListElement);
 
-
-        for (var i = 0; i < game.Players.length; i++) {
-            var playerID = game.Players[i].PlayerID;
-            var player = await sendGET("/player/" + playerID);
-
-            var clone = prefab.cloneNode(true);
-            clone.hidden = false;
-            clone.dataset.id = playerID;
-            clone.id = `player-${playerID}`;
-            clone.querySelector("#name-text").innerHTML = player.Name;
-            var r = Math.floor((playerID * 323.4334) % 64);
-            var g = Math.floor((playerID * 123.74) % 64);
-            var b = Math.floor((playerID * 523.434) % 64);
-            clone.style.backgroundColor = `rgb(${r + 128}, ${g + 128}, ${b + 128})`;
-
-            var readyText = clone.querySelector("#ready-text");
-            if (!game.IsStarted) {
-                if (game.Players[i].IsReady) {
-                    readyText.innerHTML = "Ready!!!!";
-                } else {
-                    readyText.innerHTML = "Not ready 🥱";
-                }
-
-                if (player.Name == currentPlayer.Name) {
-                    document.getElementById("join-game-button").disabled = true;
-                    document.getElementById("leave-game-button").disabled = false;
-                    var button = clone.querySelector("#ready-button");
-                    button.hidden = false;
-                    if (game.Players[i].IsReady)
-                        button.innerHTML = "Unready"
-                    else
-                        button.innerHTML = "Ready"
-                }
-            } else {
-                readyText.innerHTML = "Game has started";
-                document.getElementById("join-game-button").hidden = true;
-                document.getElementById("leave-game-button").hidden = true;
-                document.getElementById("view-deck-button").hidden = false;
-            }
-
-            list.appendChild(clone);
+        if (game.IsStarted) {
+            var battlesListElement = document.getElementById("battle-list");
+            await showGameStarted(game, battlesListElement);
         }
     } else {
         document.getElementById("editor-box").innerHTML = "game DOES NOT EXIST";
     }
+}
+
+async function showPlayers(game, listElement) {
+    var prefab = document.getElementById("player-prefab");
+
+    document.getElementById("join-game-button").disabled = false;
+    document.getElementById("leave-game-button").disabled = true;
+
+    for (var i = 0; i < game.Players.length; i++) {
+        var playerID = game.Players[i].PlayerID;
+        var player = await sendGET("/player/" + playerID);
+
+        var clone = prefab.cloneNode(true);
+        clone.hidden = false;
+        clone.dataset.id = playerID;
+        clone.id = `player-${playerID}`;
+        clone.querySelector("#name-text").innerHTML = player.Name;
+        var r = Math.floor((playerID * 323.4334) % 64);
+        var g = Math.floor((playerID * 123.74) % 64);
+        var b = Math.floor((playerID * 523.434) % 64);
+        clone.style.backgroundColor = `rgb(${r + 128}, ${g + 128}, ${b + 128})`;
+
+        var readyText = clone.querySelector("#ready-text");
+        if (!game.IsStarted) {
+            if (game.Players[i].IsReady) {
+                readyText.innerHTML = "Ready!!!!";
+            } else {
+                readyText.innerHTML = "Not ready 🥱";
+            }
+
+            if (player.Name == currentPlayer.Name) {
+                document.getElementById("join-game-button").disabled = true;
+                document.getElementById("leave-game-button").disabled = false;
+                var button = clone.querySelector("#ready-button");
+                button.hidden = false;
+                if (game.Players[i].IsReady)
+                    button.innerHTML = "Unready"
+                else
+                    button.innerHTML = "Ready"
+            }
+        } else {
+            readyText.innerHTML = "Game has started";
+
+            document.getElementById("join-game-button").hidden = true;
+            document.getElementById("leave-game-button").hidden = true;
+        }
+
+        listElement.appendChild(clone);
+    }
+}
+
+async function showGameStarted(game, listElement) {
+    document.getElementById("game-started-box").hidden = false;
+
+    var prefab = document.getElementById("battle-prefab");
+
+    for (var i = 0; i < game.Battles.length; i++) {
+        var battle = game.Battles[i];
+        var clone = prefab.cloneNode(true);
+        clone.hidden = false;
+        clone.dataset.id = i;
+        clone.id = `battle-${i}`;
+        clone.querySelector("#first-side-text").innerHTML = battle.FirstSide.PlayerID;
+        clone.querySelector("#second-side-text").innerHTML = battle.SecondSide.PlayerID;
+
+        listElement.appendChild(clone);
+
+    }
+
 }
 
 async function setReady() {
