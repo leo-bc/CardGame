@@ -76,13 +76,19 @@ async function showGameStarted(game, listElement) {
         clone.hidden = false;
         clone.dataset.id = i;
         clone.id = `battle-${i}`;
-        clone.querySelector("#first-side-text").innerHTML = battle.FirstSide.PlayerID;
-        clone.querySelector("#second-side-text").innerHTML = battle.SecondSide.PlayerID;
+        clone.querySelector("#first-side-text").innerHTML = battle.Sides[0].PlayerID;
+        clone.querySelector("#second-side-text").innerHTML = battle.Sides[1].PlayerID;
 
         listElement.appendChild(clone);
 
     }
 
+}
+
+function playBattle(element) {
+    console.log(element);
+    var battleID = element.dataset.id;
+    window.location.href = `/website/battles/battle-viewer/?game-id=${gameID}&battle-id=${battleID}`
 }
 
 async function setReady() {

@@ -1,10 +1,15 @@
 async function loadBattle() {
     var side0 = await sendGET(`/battle-side/${gameID}/${battleID}/0`);
     var side1 = await sendGET(`/battle-side/${gameID}/${battleID}/1`);
-    document.getElementById("battle-side-list").innerHTML = ""
+    document.getElementById("battle-side-list").innerHTML = "";
 
     showSide(side0);
     showSide(side1);
+
+    var battle = await sendGET(`/battle/${gameID}/${battleID}/`);
+    if (battle.IsStarted) {
+        document.getElementById("start-game-button").disabled = true;
+    }
 }
 
 function showSide(side) {
@@ -13,6 +18,11 @@ function showSide(side) {
     } else {
         showOpponentSide(side);
     }
+}
+
+async function startBattle() {
+    await sendPOST(`/start-battle/${gameID}/${battleID}/`, "")
+    loadBattle()
 }
 
 function showPlayerSide(side) {
@@ -92,5 +102,5 @@ const urlParams = new URLSearchParams(queryString);
 var gameID = urlParams.get("game-id");
 var battleID = urlParams.get("battle-id");
 if (gameID != null && battleID != null) {
-    loadBattle(gameID, battleID);
+    loadBattle();
 }

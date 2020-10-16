@@ -39,9 +39,10 @@ func createRouter() {
 	router.POST("/set-ready/:id", POSTSetReady)
 	router.GET("/battle/:game-id/:battle-id", GETBattle)
 	router.GET("/battle-side/:game-id/:battle-id/:side-id", GETBattleSide)
+	router.POST("/start-battle/:game-id/:battle-id/", POSTStartBattle)
 	router.GET("/card/:id", GETCard)
 	router.GET("/cards/:game-id", GETCards)
-	router.POST("/draw-card/:game-id/:battle-id", POSTDrawCard)
+	// router.POST("/draw-card/:game-id/:battle-id", POSTDrawCard)
 
 	router.POST("/card/:id", POSTCard)
 	router.GET("/create-card/", GETCreateCard)
@@ -159,6 +160,18 @@ func POSTSetReady(w http.ResponseWriter, r *http.Request, ps httprouter.Params) 
 	lio.HandlePOSTResponse(w)
 }
 
+func POSTStartBattle(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
+	gameID := getIntParam(ps, "game-id")
+	battleID := getIntParam(ps, "battle-id")
+
+	if gameID != -1 && battleID != -1 {
+		battle := &state.Games[gameID].Info.Battles[battleID]
+		battle.IsStarted = true
+		model.StartBattle(battle)
+	}
+	lio.HandlePOSTResponse(w)
+}
+
 // GETBattle :
 func GETBattle(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
 	gameID := getIntParam(ps, "game-id")
@@ -178,12 +191,7 @@ func GETBattleSide(w http.ResponseWriter, r *http.Request, ps httprouter.Params)
 	sideID := getIntParam(ps, "side-id")
 	if gameID != -1 && battleID != -1 {
 		battle := state.Games[gameID].Info.Battles[battleID]
-		var side model.BattleSide
-		if sideID == 0 {
-			side = battle.FirstSide
-		} else {
-			side = battle.SecondSide
-		}
+		side := battle.Sides[sideID]
 		playerID, _ := strconv.Atoi(lio.ReadCookie(cookieEncoder, r, "player-id"))
 		var sideInfo model.PlayerBattleSideInfo
 		if side.PlayerID == playerID {
@@ -263,22 +271,23 @@ func POSTCard(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
 	lio.HandlePOSTResponse(w)
 }
 
-// POSTDrawCard :
-func POSTDrawCard(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
-	playerID, _ := strconv.Atoi(lio.ReadCookie(cookieEncoder, r, "player-id"))
-	playerIndex := model.GetIndexFromID(model.GetPlayerIDs(state), playerID)
-	gameIndex := model.GetIndexFromID(model.GetGameIDs(state), getIntParam(ps, "game-id"))
-	battleID := getIntParam(ps, "battle-id")
+// // POSTDrawCard :
+// func POSTDrawCard(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
+// 	playerID, _ := strconv.Atoi(lio.ReadCookie(cookieEncoder, r, "player-id"))
+// 	playerIndex := model.GetIndexFromID(model.GetPlayerIDs(state), playerID)
+// 	gameIndex := model.GetIndexFromID(model.GetGameIDs(state), getIntParam(ps, "game-id"))
+// 	battleID := getIntParam(ps, "battle-id")
 
-	battle := state.Games[gameIndex].Info.Battles[battleID]
-	if battle.FirstSide.PlayerID == playerIndex {
-		model.DrawCard(&battle.FirstSide.Info)
-	} else if battle.SecondSide.PlayerID == playerIndex {
-		model.DrawCard(&battle.SecondSide.Info)
-	}
-	state.Games[gameIndex].Info.Battles[battleID] = battle
-	lio.HandlePOSTResponse(w)
-}
+// 	battle := state.Games[gameIndex].Info.Battles[battleID]
+
+// 	if battle.FirstSide.PlayerID == playerIndex {
+// 		model.DrawCard(&battle.FirstSide.Info)
+// 	} else if battle.SecondSide.PlayerID == playerIndex {
+// 		model.DrawCard(&battle.SecondSide.Info)
+// 	}
+// 	state.Games[gameIndex].Info.Battles[battleID] = battle
+// 	lio.HandlePOSTResponse(w)
+// }
 
 // GETCreateCard :
 func GETCreateCard(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {

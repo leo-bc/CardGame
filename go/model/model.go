@@ -62,11 +62,9 @@ type GameInfo struct {
 
 // Battle :
 type Battle struct {
-	FirstSide           BattleSide
-	SecondSide          BattleSide
-	FirstPlayerTurn     bool
-	FirstPlayerStarted  bool
-	SecondPlayerStarted bool
+	Sides     []BattleSide
+	Turn      int
+	IsStarted bool
 }
 
 // BattleSide :
@@ -142,7 +140,7 @@ func GetNewPlayer(state State) Player {
 // GetNewGame :
 func GetNewGame(state State) Game {
 	index := GetNewID(GetGameIDs(state))
-	return Game{IDable: IDable{ID: index}, Info: GameInfo{Title: "New Game", Players: []PlayerGameLink{}}}
+	return Game{IDable: IDable{ID: index}, Info: GameInfo{Title: "New Game", Players: []PlayerGameLink{}, Battles: []Battle{}}}
 }
 
 // GetCardIDs :
@@ -207,7 +205,7 @@ func GetNewBattle(player1 PlayerGameLink, player2 PlayerGameLink) Battle {
 		battleSide2.Info.TakePile = append(battleSide2.Info.TakePile, CardSlot{CardID: player2.CardIDs[i]})
 	}
 
-	return Battle{FirstSide: battleSide1, SecondSide: battleSide2, FirstPlayerTurn: true, FirstPlayerStarted: false, SecondPlayerStarted: false}
+	return Battle{Sides: []BattleSide{battleSide1, battleSide2}, Turn: 0}
 }
 
 // DrawCards :
@@ -250,6 +248,16 @@ func StartGame(state *State, game *Game) {
 			player.CardIDs = append(player.CardIDs, cards[j].ID)
 		}
 	}
+	side0 := BattleSide{PlayerID: 0, Info: BattleSideInfo{Bench: []CardSlot{}, Hand: []CardSlot{}, ThrowPile: []CardSlot{}}}
+	side1 := BattleSide{PlayerID: 2, Info: BattleSideInfo{Bench: []CardSlot{}, Hand: []CardSlot{}, ThrowPile: []CardSlot{}}}
+	battle := Battle{Sides: []BattleSide{side0, side1}}
+	for i, _ := range battle.Sides {
+		side := &battle.Sides[i]
+		for _, id := range game.Info.Players[side.PlayerID].CardIDs {
+			side.Info.TakePile = append(side.Info.TakePile, CardSlot{CardID: id})
+		}
+	}
+	game.Info.Battles = append(game.Info.Battles, battle)
 }
 
 func readJSON(state *State) {
@@ -271,46 +279,35 @@ func readJSON(state *State) {
 	}
 }
 
-// BattleNextPlayer :
-func BattleNextPlayer(battle *Battle) {
-	if battle.FirstPlayerTurn {
-		fmt.Printf("FIRST PLAYER\n")
-		if !battle.FirstPlayerStarted {
-			for i := 0; i < 7; i++ {
-				DrawCard(&battle.FirstSide.Info)
-			}
-			battle.FirstPlayerStarted = true
-		} else {
-			DrawCard(&battle.FirstSide.Info)
-		}
-	} else {
-		fmt.Printf("SECOND PLAYER\n")
-		if !battle.SecondPlayerStarted {
-			for i := 0; i < 7; i++ {
-				DrawCard(&battle.SecondSide.Info)
-			}
-			battle.SecondPlayerStarted = true
-		} else {
-			DrawCard(&battle.SecondSide.Info)
-		}
+// StartBattle :
+func StartBattle(battle *Battle) {
+	for i, _ := range battle.Sides {
+		side := &battle.Sides[i]
+		DrawCard(&side.Info)
+		DrawCard(&side.Info)
+		DrawCard(&side.Info)
+		DrawCard(&side.Info)
+		DrawCard(&side.Info)
 	}
+}
+
+// BattleNextPlayer :
+func BattleStartTurn(battle *Battle) {
+	side := &battle.Sides[battle.Turn]
+	DrawCard(&side.Info)
 }
 
 // BattleEndTurn :
 func BattleEndTurn(battle *Battle) {
-	if battle.FirstPlayerTurn {
-		battle.FirstPlayerTurn = false
-	} else {
-		battle.FirstPlayerTurn = true
-	}
+	battle.Turn = battle.Turn % len(battle.Sides)
 }
 
 // DrawCard :
 func DrawCard(side *BattleSideInfo) {
-	takePile := side.TakePile
-	if len(takePile) > 0 {
-		drawCard := takePile[0]
-		side.TakePile = takePile[1:]
+	takePile := &side.TakePile
+	if len(*takePile) > 0 {
+		drawCard := (*takePile)[0]
+		side.TakePile = (*takePile)[1:]
 		side.Hand = append(side.Hand, drawCard)
 	}
 }
@@ -346,19 +343,7 @@ func GetExampleState() State {
 	link3 := PlayerGameLink{PlayerID: 2, CardIDs: deck}
 
 	game1.Info.Players = append(game1.Info.Players, link1, link2, link3)
-
-	game1.Info.Battles = append(game1.Info.Battles, GetNewBattle(link1, link2))
 	state.Games = append(state.Games, game1)
-
-	BattleNextPlayer(&state.Games[0].Info.Battles[0])
-	BattleEndTurn(&state.Games[0].Info.Battles[0])
-	BattleNextPlayer(&state.Games[0].Info.Battles[0])
-	BattleEndTurn(&state.Games[0].Info.Battles[0])
-
-	BattleNextPlayer(&state.Games[0].Info.Battles[0])
-	BattleEndTurn(&state.Games[0].Info.Battles[0])
-	BattleNextPlayer(&state.Games[0].Info.Battles[0])
-	BattleEndTurn(&state.Games[0].Info.Battles[0])
 
 	return state
 }

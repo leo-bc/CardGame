@@ -26,6 +26,8 @@ async function loadCards() {
     }
 }
 
+
+
 async function createCard() {
     await sendGET("/create-card/");
     loadCards();
