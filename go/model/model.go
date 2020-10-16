@@ -253,7 +253,7 @@ func StartGame(state *State, game *Game) {
 }
 
 func readJSON(state *State) {
-	jsonFile, err := os.Open("./cards/converted.json")
+	jsonFile, err := os.Open("./cards/JSONCards.txt")
 
 	if err != nil {
 		fmt.Println(err)
