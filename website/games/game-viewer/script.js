@@ -92,7 +92,7 @@ function playBattle(element) {
 }
 
 async function setReady() {
-    await sendPOST("/set-ready/" + gameID);
+    await sendPOST("/game-set-ready/" + gameID);
     await refresh();
 }
 

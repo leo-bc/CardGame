@@ -21,7 +21,7 @@ function showSide(side) {
 }
 
 async function startBattle() {
-    await sendPOST(`/start-battle/${gameID}/${battleID}/`, "")
+    await sendPOST(`/battle-start/${gameID}/${battleID}/`, "")
     loadBattle()
 }
 
@@ -34,6 +34,7 @@ function showPlayerSide(side) {
     showBench(side.Info.Bench, clone, cardSlotPrefab);
     showHand(side.Info.Hand, clone, cardSlotPrefab);
     showTakePile(side.Info.TakePile, clone, cardSlotPrefab);
+    clone.querySelector("#end-turn-button").disabled = !side.IsTurn;
 
     document.getElementById("battle-side-list").appendChild(clone);
 }
@@ -92,8 +93,8 @@ function showTakePile(takePile, parent, cardSlotPrefab) {
 }
 
 
-async function drawCard(element) {
-    await sendPOST(`/draw-card/${gameID}/${battleID}/`, "");
+async function endTurn(element) {
+    await sendPOST(`/battle-end-turn/${gameID}/${battleID}/`, "");
     loadBattle();
 }
 

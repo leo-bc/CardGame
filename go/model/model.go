@@ -62,6 +62,7 @@ type GameInfo struct {
 
 // Battle :
 type Battle struct {
+	Updateable
 	Sides     []BattleSide
 	Turn      int
 	IsStarted bool
@@ -84,6 +85,7 @@ type BattleSideInfo struct {
 // PlayerBattleSideInfo :
 type PlayerBattleSideInfo struct {
 	IsPlayer bool
+	IsTurn   bool
 	Info     BattleSideInfo
 }
 
@@ -126,25 +128,25 @@ type CardInfo struct {
 }
 
 // GetNewCard :
-func GetNewCard(state State) Card {
+func GetNewCard(state *State) Card {
 	index := GetNewID(GetCardIDs(state))
 	return Card{IDable: IDable{ID: index}, Info: CardInfo{}}
 }
 
 // GetNewPlayer :
-func GetNewPlayer(state State) Player {
+func GetNewPlayer(state *State) Player {
 	index := GetNewID(GetPlayerIDs(state))
 	return Player{IDable: IDable{ID: index}, Info: PlayerInfo{Name: "New Player"}}
 }
 
 // GetNewGame :
-func GetNewGame(state State) Game {
+func GetNewGame(state *State) Game {
 	index := GetNewID(GetGameIDs(state))
 	return Game{IDable: IDable{ID: index}, Info: GameInfo{Title: "New Game", Players: []PlayerGameLink{}, Battles: []Battle{}}}
 }
 
 // GetCardIDs :
-func GetCardIDs(state State) []IDable {
+func GetCardIDs(state *State) []IDable {
 	var list []IDable
 	for i := 0; i < len(state.Cards); i++ {
 		list = append(list, state.Cards[i].IDable)
@@ -153,7 +155,7 @@ func GetCardIDs(state State) []IDable {
 }
 
 // GetPlayerIDs :
-func GetPlayerIDs(state State) []IDable {
+func GetPlayerIDs(state *State) []IDable {
 	var list []IDable
 	for i := 0; i < len(state.Players); i++ {
 		list = append(list, state.Players[i].IDable)
@@ -162,7 +164,7 @@ func GetPlayerIDs(state State) []IDable {
 }
 
 // GetGameIDs :
-func GetGameIDs(state State) []IDable {
+func GetGameIDs(state *State) []IDable {
 	var list []IDable
 	for i := 0; i < len(state.Games); i++ {
 		list = append(list, state.Games[i].IDable)
@@ -273,7 +275,7 @@ func readJSON(state *State) {
 	json.Unmarshal(byteValue, &infos)
 
 	for i := 0; i < len(infos); i++ {
-		card := GetNewCard(*state)
+		card := GetNewCard(state)
 		card.Info = infos[i]
 		state.Cards = append(state.Cards, card)
 	}
@@ -293,13 +295,14 @@ func StartBattle(battle *Battle) {
 
 // BattleNextPlayer :
 func BattleStartTurn(battle *Battle) {
-	side := &battle.Sides[battle.Turn]
-	DrawCard(&side.Info)
+
 }
 
 // BattleEndTurn :
 func BattleEndTurn(battle *Battle) {
-	battle.Turn = battle.Turn % len(battle.Sides)
+	side := &battle.Sides[battle.Turn]
+	DrawCard(&side.Info)
+	battle.Turn = (battle.Turn + 1) % len(battle.Sides)
 }
 
 // DrawCard :
@@ -318,22 +321,22 @@ func GetExampleState() State {
 
 	readJSON(&state)
 
-	player1 := GetNewPlayer(state)
+	player1 := GetNewPlayer(&state)
 	player1.Info.Name = "dj leo"
 
 	state.Players = append(state.Players, player1)
 
-	player2 := GetNewPlayer(state)
+	player2 := GetNewPlayer(&state)
 	player2.Info.Name = "funky kong"
 
 	state.Players = append(state.Players, player2)
 
-	player3 := GetNewPlayer(state)
+	player3 := GetNewPlayer(&state)
 	player3.Info.Name = "richard"
 
 	state.Players = append(state.Players, player3)
 
-	game1 := GetNewGame(state)
+	game1 := GetNewGame(&state)
 	game1.Info.Title = "Cool game!"
 
 	var deck []int
