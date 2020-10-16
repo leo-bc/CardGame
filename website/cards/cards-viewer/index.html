@@ -6,12 +6,15 @@
 <body>
     <p>Player: </p>
     <p id="name-text"></p>
+    <button onclick="backToGame()">Back to game</button>
     <button onclick="createCard()">Create card</button>
     <div id="card-prefab" class="card" data-id="-1" hidden>
         <h2>Title:</h2>
         <p id="title-text"></p>
-        <h2>HP:</h2>
-        <p id="hp-text"></p>
+        <h2>Description:</h2>
+        <p id="description-text"></p>
+        <h2>Type:</h2>
+        <p id="card-type-text"></p>
         <button onclick="editCard(this.parentElement)">Edit card</button>
         <button onclick="removeCard(this.parentElement)">Remove card</button>
     </div>

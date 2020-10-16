@@ -150,6 +150,7 @@ func POSTSetReady(w http.ResponseWriter, r *http.Request, ps httprouter.Params) 
 			}
 			if everyoneReady {
 				game.Info.IsStarted = true
+				model.StartGame(&state, game)
 			}
 		}
 
