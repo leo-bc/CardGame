@@ -4,7 +4,9 @@ import (
 	"encoding/json"
 	"fmt"
 	"io/ioutil"
+	"math/rand"
 	"os"
+	"time"
 )
 
 // State :
@@ -118,14 +120,17 @@ type Card struct {
 
 // CardInfo :
 type CardInfo struct {
-	Title string
-	HP    int
+	Title       string
+	Description string
+	CardType    string
+	Ranking     string
+	URL         string
 }
 
 // GetNewCard :
 func GetNewCard(state State) Card {
 	index := GetNewID(GetCardIDs(state))
-	return Card{IDable: IDable{ID: index}, Info: CardInfo{Title: "New Card", HP: 10}}
+	return Card{IDable: IDable{ID: index}, Info: CardInfo{}}
 }
 
 // GetNewPlayer :
@@ -205,8 +210,50 @@ func GetNewBattle(player1 PlayerGameLink, player2 PlayerGameLink) Battle {
 	return Battle{FirstSide: battleSide1, SecondSide: battleSide2, FirstPlayerTurn: true, FirstPlayerStarted: false, SecondPlayerStarted: false}
 }
 
+// DrawCards :
+func DrawCards(state *State) []*Card {
+	var drawnLegends int
+	var drawnRares int
+	var drawnMinions int
+	var result []*Card
+
+	legendsMax := 5
+	raresMax := 10
+	minionsMax := 20
+
+	rand.Seed(time.Now().UnixNano())
+
+	for drawnLegends < legendsMax || drawnRares < raresMax || drawnMinions < minionsMax {
+		drawnCard := &state.Cards[rand.Intn(len(state.Cards))]
+		if drawnLegends < legendsMax && drawnCard.Info.Ranking == "Legend" {
+			drawnLegends++
+			result = append(result, drawnCard)
+		} else if drawnRares < raresMax && drawnCard.Info.Ranking == "Rare" {
+			drawnRares++
+			result = append(result, drawnCard)
+		} else if drawnMinions < minionsMax && drawnCard.Info.Ranking == "Minion" {
+			drawnMinions++
+			result = append(result, drawnCard)
+		}
+	}
+
+	return result
+}
+
+// StartGame :
+func StartGame(state *State, game *Game) {
+	for i := 0; i < len(game.Info.Players); i++ {
+		player := &game.Info.Players[i]
+		cards := DrawCards(state)
+
+		for j := 0; j < len(cards); j++ {
+			player.CardIDs = append(player.CardIDs, cards[j].ID)
+		}
+	}
+}
+
 func readJSON(state *State) {
-	jsonFile, err := os.Open("../cards/converted.json")
+	jsonFile, err := os.Open("C:\\Users\\Leo\\Documents\\Wiki Parser\\WikiData processing\\JSONCards.txt")
 	if err != nil {
 		fmt.Println(err)
 	}
@@ -292,9 +339,7 @@ func GetExampleState() State {
 	game1.Info.Title = "Cool game!"
 
 	var deck []int
-	for i := 0; i < len(state.Cards); i++ {
-		deck = append(deck, state.Cards[i].ID)
-	}
+
 	link1 := PlayerGameLink{PlayerID: 0, CardIDs: deck, IsReady: true}
 	link2 := PlayerGameLink{PlayerID: 1, CardIDs: deck, IsReady: true}
 	link3 := PlayerGameLink{PlayerID: 2, CardIDs: deck}

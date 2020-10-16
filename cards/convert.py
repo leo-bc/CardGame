@@ -4,9 +4,6 @@ class Card:
     def __init__(self, title, hp):
         self.Title = title
         self.HP = hp
-    
-    def toString(self):
-        return f'Pokemon: {self.Title}! [{self.HP}]'
 
 f = open("cards/base.json", "r")
 json_string = f.read()
