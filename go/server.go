@@ -26,7 +26,6 @@ func createRouter() {
 	cookieEncoder = securecookie.New(hashKey, blockKey)
 
 	router := httprouter.New()
-	router.GET("/", GETIndex)
 	router.GET("/state", GETState)
 	router.GET("/player/:id", GETPlayer)
 	router.GET("/current-player/", GETCurrentPlayer)
@@ -49,7 +48,7 @@ func createRouter() {
 	router.POST("/remove-card/:id", POSTRemoveCard)
 
 	// for debugging purposes
-	router.ServeFiles("/website/*filepath", http.Dir("../website/"))
+	router.ServeFiles("/website/*filepath", http.Dir("./website/"))
 
 	log.Printf("starting server at http://localhost:10001\n")
 	log.Fatal(http.ListenAndServe(":10001", router))
@@ -61,12 +60,6 @@ func POSTSelectPlayer(w http.ResponseWriter, r *http.Request, ps httprouter.Para
 	idString := strconv.Itoa(playerID)
 	lio.SetCookie(cookieEncoder, w, "player-id", idString)
 	lio.HandlePOSTResponse(w)
-}
-
-// GETIndex : redirect to the actual homepage for ease of use
-func GETIndex(w http.ResponseWriter, r *http.Request, _ httprouter.Params) {
-	w.WriteHeader(http.StatusTemporaryRedirect) // 307
-	http.Redirect(w, r, "/static/", 307)
 }
 
 // GETState :

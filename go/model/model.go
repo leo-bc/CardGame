@@ -206,7 +206,7 @@ func GetNewBattle(player1 PlayerGameLink, player2 PlayerGameLink) Battle {
 }
 
 func readJSON(state *State) {
-	jsonFile, err := os.Open("../cards/converted.json")
+	jsonFile, err := os.Open("./cards/converted.json")
 	if err != nil {
 		fmt.Println(err)
 	}
