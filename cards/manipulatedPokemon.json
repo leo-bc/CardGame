@@ -1,0 +1,757 @@
+[
+    {
+        "Level": 76,
+        "HP": 120,
+        "Attacks": [
+            {
+                "Name": "Fire Spin",
+                "Cost": 4,
+                "Damage": 100
+            }
+        ]
+    },
+    {
+        "Level": 67,
+        "HP": 100,
+        "Attacks": [
+            {
+                "Name": "Seismic Toss",
+                "Cost": 4,
+                "Damage": 60
+            }
+        ]
+    },
+    {
+        "Level": 67,
+        "HP": 100,
+        "Attacks": [
+            {
+                "Name": "Solarbeam",
+                "Cost": 4,
+                "Damage": 60
+            }
+        ]
+    },
+    {
+        "Level": 64,
+        "HP": 90,
+        "Attacks": [
+            {
+                "Name": "Thunder",
+                "Cost": 4,
+                "Damage": 60
+            },
+            {
+                "Name": "Thunderbolt",
+                "Cost": 4,
+                "Damage": 100
+            }
+        ]
+    },
+    {
+        "Level": 55,
+        "HP": 120,
+        "Attacks": [
+            {
+                "Name": "Double-edge",
+                "Cost": 4,
+                "Damage": 80
+            }
+        ]
+    },
+    {
+        "Level": 48,
+        "HP": 90,
+        "Attacks": [
+            {
+                "Name": "Whirlpool",
+                "Cost": 4,
+                "Damage": 40
+            }
+        ]
+    },
+    {
+        "Level": 45,
+        "HP": 100,
+        "Attacks": [
+            {
+                "Name": "Flamethrower",
+                "Cost": 3,
+                "Damage": 50
+            },
+            {
+                "Name": "Take Down",
+                "Cost": 4,
+                "Damage": 80
+            }
+        ]
+    },
+    {
+        "Level": 42,
+        "HP": 80,
+        "Attacks": [
+            {
+                "Name": "Confuse Ray",
+                "Cost": 3,
+                "Damage": 30
+            }
+        ]
+    },
+    {
+        "Level": 42,
+        "HP": 80,
+        "Attacks": [
+            {
+                "Name": "Aurora Beam",
+                "Cost": 3,
+                "Damage": 50
+            },
+            {
+                "Name": "Ice Beam",
+                "Cost": 4,
+                "Damage": 30
+            }
+        ]
+    },
+    {
+        "Level": 41,
+        "HP": 100,
+        "Attacks": [
+            {
+                "Name": "Dragon Rage",
+                "Cost": 3,
+                "Damage": 50
+            },
+            {
+                "Name": "Bubblebeam",
+                "Cost": 4,
+                "Damage": 40
+            }
+        ]
+    },
+    {
+        "Level": 41,
+        "HP": 60,
+        "Attacks": [
+            {
+                "Name": "Bite",
+                "Cost": 1,
+                "Damage": 20
+            }
+        ]
+    },
+    {
+        "Level": 40,
+        "HP": 80,
+        "Attacks": [
+            {
+                "Name": "Agility",
+                "Cost": 3,
+                "Damage": 20
+            },
+            {
+                "Name": "Thunder",
+                "Cost": 4,
+                "Damage": 60
+            }
+        ]
+    },
+    {
+        "Level": 40,
+        "HP": 80,
+        "Attacks": [
+            {
+                "Name": "Electric Shock",
+                "Cost": 3,
+                "Damage": 50
+            }
+        ]
+    },
+    {
+        "Level": 40,
+        "HP": 80,
+        "Attacks": [
+            {
+                "Name": "Submission",
+                "Cost": 4,
+                "Damage": 60
+            }
+        ]
+    },
+    {
+        "Level": 38,
+        "HP": 60,
+        "Attacks": [
+            {
+                "Name": "Super Psy",
+                "Cost": 3,
+                "Damage": 50
+            }
+        ]
+    },
+    {
+        "Level": 36,
+        "HP": 70,
+        "Attacks": [
+            {
+                "Name": "Slash",
+                "Cost": 3,
+                "Damage": 40
+            },
+            {
+                "Name": "Earthquake",
+                "Cost": 4,
+                "Damage": 70
+            }
+        ]
+    },
+    {
+        "Level": 36,
+        "HP": 60,
+        "Attacks": [
+            {
+                "Name": "Whirlwind",
+                "Cost": 2,
+                "Damage": 20
+            }
+        ]
+    },
+    {
+        "Level": 35,
+        "HP": 70,
+        "Attacks": [
+            {
+                "Name": "Thundershock",
+                "Cost": 1,
+                "Damage": 10
+            }
+        ]
+    },
+    {
+        "Level": 33,
+        "HP": 70,
+        "Attacks": [
+            {
+                "Name": "Jab",
+                "Cost": 1,
+                "Damage": 20
+            },
+            {
+                "Name": "Special Punch",
+                "Cost": 3,
+                "Damage": 40
+            }
+        ]
+    },
+    {
+        "Level": 33,
+        "HP": 80,
+        "Attacks": [
+            {
+                "Name": "Hyper Beam",
+                "Cost": 4,
+                "Damage": 20
+            }
+        ]
+    },
+    {
+        "Level": 32,
+        "HP": 80,
+        "Attacks": [
+            {
+                "Name": "Fire Blast",
+                "Cost": 4,
+                "Damage": 80
+            }
+        ]
+    },
+    {
+        "Level": 32,
+        "HP": 80,
+        "Attacks": [
+            {
+                "Name": "Poison Sting",
+                "Cost": 3,
+                "Damage": 40
+            }
+        ]
+    },
+    {
+        "Level": 32,
+        "HP": 80,
+        "Attacks": [
+            {
+                "Name": "Slash",
+                "Cost": 3,
+                "Damage": 30
+            },
+            {
+                "Name": "Flamethrower",
+                "Cost": 3,
+                "Damage": 50
+            }
+        ]
+    },
+    {
+        "Level": 28,
+        "HP": 60,
+        "Attacks": [
+            {
+                "Name": "Thunder Wave",
+                "Cost": 3,
+                "Damage": 30
+            },
+            {
+                "Name": "Selfdestruct",
+                "Cost": 4,
+                "Damage": 80
+            }
+        ]
+    },
+    {
+        "Level": 28,
+        "HP": 60,
+        "Attacks": [
+            {
+                "Name": "Star Freeze",
+                "Cost": 3,
+                "Damage": 20
+            }
+        ]
+    },
+    {
+        "Level": 25,
+        "HP": 60,
+        "Attacks": [
+            {
+                "Name": "Horn Drill",
+                "Cost": 4,
+                "Damage": 50
+            }
+        ]
+    },
+    {
+        "Level": 24,
+        "HP": 50,
+        "Attacks": [
+            {
+                "Name": "Fire Punch",
+                "Cost": 2,
+                "Damage": 30
+            },
+            {
+                "Name": "Flamethrower",
+                "Cost": 3,
+                "Damage": 50
+            }
+        ]
+    },
+    {
+        "Level": 23,
+        "HP": 90,
+        "Attacks": [
+            {
+                "Name": "Toxic",
+                "Cost": 3,
+                "Damage": 40
+            }
+        ]
+    },
+    {
+        "Level": 23,
+        "HP": 80,
+        "Attacks": [
+            {
+                "Name": "Poisonpowder",
+                "Cost": 2,
+                "Damage": 20
+            }
+        ]
+    },
+    {
+        "Level": 22,
+        "HP": 60,
+        "Attacks": [
+            {
+                "Name": "Dream Eater",
+                "Cost": 2,
+                "Damage": 50
+            }
+        ]
+    },
+    {
+        "Level": 22,
+        "HP": 70,
+        "Attacks": [
+            {
+                "Name": "Bite",
+                "Cost": 3,
+                "Damage": 40
+            }
+        ]
+    },
+    {
+        "Level": 21,
+        "HP": 70,
+        "Attacks": [
+            {
+                "Name": "Stun Spore",
+                "Cost": 2,
+                "Damage": 20
+            }
+        ]
+    },
+    {
+        "Level": 20,
+        "HP": 50,
+        "Attacks": [
+            {
+                "Name": "Leek Slap",
+                "Cost": 1,
+                "Damage": 30
+            },
+            {
+                "Name": "Pot Smash",
+                "Cost": 3,
+                "Damage": 30
+            }
+        ]
+    },
+    {
+        "Level": 20,
+        "HP": 60,
+        "Attacks": [
+            {
+                "Name": "Vine Whip",
+                "Cost": 3,
+                "Damage": 30
+            },
+            {
+                "Name": "Poisonpowder",
+                "Cost": 3,
+                "Damage": 30
+            }
+        ]
+    },
+    {
+        "Level": 20,
+        "HP": 50,
+        "Attacks": [
+            {
+                "Name": "Low Kick",
+                "Cost": 1,
+                "Damage": 20
+            }
+        ]
+    },
+    {
+        "Level": 20,
+        "HP": 40,
+        "Attacks": [
+            {
+                "Name": "Horn Hazard",
+                "Cost": 1,
+                "Damage": 30
+            }
+        ]
+    },
+    {
+        "Level": 18,
+        "HP": 60,
+        "Attacks": [
+            {
+                "Name": "Flare",
+                "Cost": 2,
+                "Damage": 20
+            }
+        ]
+    },
+    {
+        "Level": 15,
+        "HP": 40,
+        "Attacks": [
+            {
+                "Name": "Slap",
+                "Cost": 1,
+                "Damage": 20
+            }
+        ]
+    },
+    {
+        "Level": 13,
+        "HP": 40,
+        "Attacks": [
+            {
+                "Name": "Leech Seed",
+                "Cost": 2,
+                "Damage": 20
+            }
+        ]
+    },
+    {
+        "Level": 13,
+        "HP": 40,
+        "Attacks": [
+            {
+                "Name": "String Shot",
+                "Cost": 1,
+                "Damage": 10
+            }
+        ]
+    },
+    {
+        "Level": 13,
+        "HP": 50,
+        "Attacks": [
+            {
+                "Name": "Foul Gas",
+                "Cost": 2,
+                "Damage": 10
+            }
+        ]
+    },
+    {
+        "Level": 13,
+        "HP": 40,
+        "Attacks": [
+            {
+                "Name": "Thunder Wave",
+                "Cost": 1,
+                "Damage": 10
+            },
+            {
+                "Name": "Selfdestruct",
+                "Cost": 2,
+                "Damage": 40
+            }
+        ]
+    },
+    {
+        "Level": 12,
+        "HP": 60,
+        "Attacks": [
+            {
+                "Name": "Headbutt",
+                "Cost": 1,
+                "Damage": 10
+            }
+        ]
+    },
+    {
+        "Level": 12,
+        "HP": 90,
+        "Attacks": [
+            {
+                "Name": "Rock Throw",
+                "Cost": 1,
+                "Damage": 10
+            }
+        ]
+    },
+    {
+        "Level": 12,
+        "HP": 40,
+        "Attacks": [
+            {
+                "Name": "Gnaw",
+                "Cost": 1,
+                "Damage": 10
+            },
+            {
+                "Name": "Thunder Jolt",
+                "Cost": 2,
+                "Damage": 30
+            }
+        ]
+    },
+    {
+        "Level": 12,
+        "HP": 40,
+        "Attacks": [
+            {
+                "Name": "Sand-attack",
+                "Cost": 1,
+                "Damage": 10
+            }
+        ]
+    },
+    {
+        "Level": 12,
+        "HP": 40,
+        "Attacks": [
+            {
+                "Name": "Poison Sting",
+                "Cost": 1,
+                "Damage": 10
+            }
+        ]
+    },
+    {
+        "Level": 11,
+        "HP": 50,
+        "Attacks": [
+            {
+                "Name": "Confuse Ray",
+                "Cost": 2,
+                "Damage": 10
+            }
+        ]
+    },
+    {
+        "Level": 10,
+        "HP": 40,
+        "Attacks": [
+            {
+                "Name": "Pound",
+                "Cost": 1,
+                "Damage": 10
+            }
+        ]
+    },
+    {
+        "Level": 10,
+        "HP": 30,
+        "Attacks": [
+            {
+                "Name": "Psyshock",
+                "Cost": 1,
+                "Damage": 10
+            }
+        ]
+    },
+    {
+        "Level": 10,
+        "HP": 50,
+        "Attacks": [
+            {
+                "Name": "Scratch",
+                "Cost": 1,
+                "Damage": 10
+            },
+            {
+                "Name": "Ember",
+                "Cost": 2,
+                "Damage": 30
+            }
+        ]
+    },
+    {
+        "Level": 10,
+        "HP": 50,
+        "Attacks": [
+            {
+                "Name": "Pound",
+                "Cost": 1,
+                "Damage": 10
+            },
+            {
+                "Name": "Confuse Ray",
+                "Cost": 2,
+                "Damage": 10
+            }
+        ]
+    },
+    {
+        "Level": 10,
+        "HP": 40,
+        "Attacks": [
+            {
+                "Name": "Smash Kick",
+                "Cost": 2,
+                "Damage": 20
+            },
+            {
+                "Name": "Flame Tail",
+                "Cost": 2,
+                "Damage": 30
+            }
+        ]
+    },
+    {
+        "Level": 10,
+        "HP": 40,
+        "Attacks": [
+            {
+                "Name": "Tackle",
+                "Cost": 1,
+                "Damage": 10
+            }
+        ]
+    },
+    {
+        "Level": 9,
+        "HP": 30,
+        "Attacks": [
+            {
+                "Name": "Bite",
+                "Cost": 1,
+                "Damage": 20
+            }
+        ]
+    },
+    {
+        "Level": 8,
+        "HP": 30,
+        "Attacks": [
+            {
+                "Name": "Tackle",
+                "Cost": 1,
+                "Damage": 10
+            }
+        ]
+    },
+    {
+        "Level": 8,
+        "HP": 30,
+        "Attacks": [
+            {
+                "Name": "Dig",
+                "Cost": 1,
+                "Damage": 10
+            },
+            {
+                "Name": "Mud Slap",
+                "Cost": 2,
+                "Damage": 30
+            }
+        ]
+    },
+    {
+        "Level": 8,
+        "HP": 40,
+        "Attacks": [
+            {
+                "Name": "Whirlwind",
+                "Cost": 2,
+                "Damage": 10
+            }
+        ]
+    },
+    {
+        "Level": 8,
+        "HP": 40,
+        "Attacks": [
+            {
+                "Name": "Bubble",
+                "Cost": 1,
+                "Damage": 10
+            }
+        ]
+    },
+    {
+        "Level": 8,
+        "HP": 50,
+        "Attacks": [
+            {
+                "Name": "Bind",
+                "Cost": 2,
+                "Damage": 20
+            },
+            {
+                "Name": "Poisonpowder",
+                "Cost": 3,
+                "Damage": 30
+            }
+        ]
+    }
+]

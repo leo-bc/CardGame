@@ -9,6 +9,7 @@ import (
 	"github.com/julienschmidt/httprouter"
 )
 
+// SetBattleRoutes :
 func SetBattleRoutes() {
 	router.GET("/battle/:game-id/:battle-id", GETBattle)
 	router.GET("/battle-side/:game-id/:battle-id/:side-id", GETBattleSide)

@@ -120,11 +120,31 @@ type Card struct {
 
 // CardInfo :
 type CardInfo struct {
+	Identity CardIdentityInfo
+	Rank     CardRankInfo
+	Attacks  []Attack
+}
+
+// CardIdentityInfo :
+type CardIdentityInfo struct {
 	Title       string
 	Description string
-	CardType    string
-	Ranking     string
+	Type        string
 	URL         string
+}
+
+// CardRankInfo :
+type CardRankInfo struct {
+	Ranking string
+	Level   int
+	HP      int
+}
+
+// Attack :
+type Attack struct {
+	Name   string
+	Cost   int
+	Damage int
 }
 
 // GetNewCard :
@@ -225,13 +245,13 @@ func DrawCards(state *State) []*Card {
 
 	for drawnLegends < legendsMax || drawnRares < raresMax || drawnMinions < minionsMax {
 		drawnCard := &state.Cards[rand.Intn(len(state.Cards))]
-		if drawnLegends < legendsMax && drawnCard.Info.Ranking == "Legend" {
+		if drawnLegends < legendsMax && drawnCard.Info.Rank.Ranking == "Legend" {
 			drawnLegends++
 			result = append(result, drawnCard)
-		} else if drawnRares < raresMax && drawnCard.Info.Ranking == "Rare" {
+		} else if drawnRares < raresMax && drawnCard.Info.Rank.Ranking == "Rare" {
 			drawnRares++
 			result = append(result, drawnCard)
-		} else if drawnMinions < minionsMax && drawnCard.Info.Ranking == "Minion" {
+		} else if drawnMinions < minionsMax && drawnCard.Info.Rank.Ranking == "Minion" {
 			drawnMinions++
 			result = append(result, drawnCard)
 		}
@@ -253,7 +273,7 @@ func StartGame(state *State, game *Game) {
 	side0 := BattleSide{PlayerID: 0, Info: BattleSideInfo{Bench: []CardSlot{}, Hand: []CardSlot{}, ThrowPile: []CardSlot{}}}
 	side1 := BattleSide{PlayerID: 2, Info: BattleSideInfo{Bench: []CardSlot{}, Hand: []CardSlot{}, ThrowPile: []CardSlot{}}}
 	battle := Battle{Sides: []BattleSide{side0, side1}}
-	for i, _ := range battle.Sides {
+	for i := range battle.Sides {
 		side := &battle.Sides[i]
 		for _, id := range game.Info.Players[side.PlayerID].CardIDs {
 			side.Info.TakePile = append(side.Info.TakePile, CardSlot{CardID: id})
@@ -263,7 +283,7 @@ func StartGame(state *State, game *Game) {
 }
 
 func readJSON(state *State) {
-	jsonFile, err := os.Open("./cards/JSONCards.txt")
+	jsonFile, err := os.Open("C:\\Users\\Leo\\Documents\\Projecten\\CardsGeneration\\CardsSplicer\\output\\outputCards.json")
 
 	if err != nil {
 		fmt.Println(err)
@@ -283,7 +303,7 @@ func readJSON(state *State) {
 
 // StartBattle :
 func StartBattle(battle *Battle) {
-	for i, _ := range battle.Sides {
+	for i := range battle.Sides {
 		side := &battle.Sides[i]
 		DrawCard(&side.Info)
 		DrawCard(&side.Info)
@@ -293,7 +313,7 @@ func StartBattle(battle *Battle) {
 	}
 }
 
-// BattleNextPlayer :
+// BattleStartTurn :
 func BattleStartTurn(battle *Battle) {
 
 }

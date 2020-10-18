@@ -9,6 +9,7 @@ import (
 	"github.com/julienschmidt/httprouter"
 )
 
+// SetPlayerRoutes :
 func SetPlayerRoutes() {
 	router.GET("/player/:id", GETPlayer)
 	router.GET("/players/", GETPlayers)

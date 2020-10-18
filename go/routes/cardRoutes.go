@@ -9,6 +9,7 @@ import (
 	"github.com/julienschmidt/httprouter"
 )
 
+// SetCardRoutes :
 func SetCardRoutes() {
 	router.GET("/card/:id", GETCard)
 	router.GET("/cards/:game-id", GETCards)

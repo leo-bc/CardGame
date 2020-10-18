@@ -9,6 +9,7 @@ import (
 	"github.com/julienschmidt/httprouter"
 )
 
+// SetGameRoutes :
 func SetGameRoutes() {
 	router.GET("/game/:id", GETGame)
 
@@ -73,7 +74,7 @@ func POSTLeaveGame(w http.ResponseWriter, r *http.Request, ps httprouter.Params)
 	lio.HandlePOSTResponse(w)
 }
 
-// POSTSetGameReady :
+// POSTGameSetReady :
 func POSTGameSetReady(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
 	gameID := model.GetIndexFromID(model.GetGameIDs(state), lio.GetIntParam(ps, "id"))
 	playerID, _ := strconv.Atoi(lio.ReadCookie(cookieEncoder, r, "player-id"))
