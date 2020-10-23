@@ -1,5 +1,6 @@
 async function showGame() {
     var game = await sendGET("/game/" + gameID);
+    console.log(game);
     var playerListElement = document.getElementById("player-list");
     playerListElement.innerHTML = "";
     if (game != "") {
@@ -9,6 +10,7 @@ async function showGame() {
 
         if (game.IsStarted) {
             var battlesListElement = document.getElementById("battle-list");
+            battlesListElement.innerHTML = "";
             await showGameStarted(game, battlesListElement);
         }
     } else {
@@ -116,7 +118,7 @@ async function startPage() {
         const urlParams = new URLSearchParams(queryString);
         gameID = urlParams.get("id");
         if (gameID != null) {
-            showGame(gameID);
+            showGame();
         }
 
         setInterval(refresh, 1000);
@@ -127,13 +129,14 @@ async function startPage() {
 
 var currentPlayer;
 var gameID;
+var updateID = 0;
 
 startPage();
 
 async function refresh() {
-    var updated = await sendGET("/game-updated/" + gameID);
-    if (updated == true) {
-        console.log("UPDATING!");
+    var updateInfo = await sendGET(`/game-updated/${gameID}/${updateID}`);
+    if (updateInfo.IsUpdated == true) {
+        updateID = updateInfo.NewID;
         showGame();
     }
 }

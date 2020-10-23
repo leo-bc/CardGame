@@ -13,7 +13,7 @@ import (
 func SetGameRoutes() {
 	router.GET("/game/:id", GETGame)
 
-	router.GET("/game-updated/:id", GETGameUpdated)
+	router.GET("/game-updated/:game-id/:update-id", GETGameUpdated)
 
 	router.POST("/join-game/:id", POSTJoinGame)
 	router.POST("/leave-game/:id", POSTLeaveGame)
@@ -23,7 +23,7 @@ func SetGameRoutes() {
 
 // GETGame :
 func GETGame(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
-	index := model.GetIndexFromID(model.GetGameIDs(state), lio.GetIntParam(ps, "id"))
+	index := lio.GetIntParam(ps, "id")
 
 	if index != -1 {
 		lio.HandleGETResponse(w, state.Games[index].Info)
@@ -34,11 +34,12 @@ func GETGame(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
 
 // GETGameUpdated :
 func GETGameUpdated(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
-	index := model.GetIndexFromID(model.GetGameIDs(state), lio.GetIntParam(ps, "id"))
+	gameID := lio.GetIntParam(ps, "game-id")
+	updateID := lio.GetIntParam(ps, "update-id")
 
-	if index != -1 {
-		isUpdated := state.Games[index].TriggerUpdate()
-		lio.HandleGETResponse(w, isUpdated)
+	if gameID != -1 {
+		updateInfo := state.Games[gameID].TriggerUpdate(updateID)
+		lio.HandleGETResponse(w, updateInfo)
 	} else {
 		lio.HandleGETResponse(w, "")
 	}
@@ -46,7 +47,7 @@ func GETGameUpdated(w http.ResponseWriter, r *http.Request, ps httprouter.Params
 
 // POSTJoinGame :
 func POSTJoinGame(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
-	index := model.GetIndexFromID(model.GetGameIDs(state), lio.GetIntParam(ps, "id"))
+	index := lio.GetIntParam(ps, "id")
 	playerID, _ := strconv.Atoi(lio.ReadCookie(cookieEncoder, r, "player-id"))
 	if index != -1 && playerID != -1 {
 		link := model.PlayerGameLink{PlayerID: playerID, CardIDs: []int{}}
@@ -58,7 +59,7 @@ func POSTJoinGame(w http.ResponseWriter, r *http.Request, ps httprouter.Params) 
 
 // POSTLeaveGame :
 func POSTLeaveGame(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
-	index := model.GetIndexFromID(model.GetGameIDs(state), lio.GetIntParam(ps, "id"))
+	index := lio.GetIntParam(ps, "id")
 	playerID, _ := strconv.Atoi(lio.ReadCookie(cookieEncoder, r, "player-id"))
 	if index != -1 && playerID != -1 {
 		var links []model.PlayerGameLink
@@ -76,7 +77,7 @@ func POSTLeaveGame(w http.ResponseWriter, r *http.Request, ps httprouter.Params)
 
 // POSTGameSetReady :
 func POSTGameSetReady(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
-	gameID := model.GetIndexFromID(model.GetGameIDs(state), lio.GetIntParam(ps, "id"))
+	gameID := lio.GetIntParam(ps, "id")
 	playerID, _ := strconv.Atoi(lio.ReadCookie(cookieEncoder, r, "player-id"))
 	if gameID != -1 && playerID != -1 {
 		game := &state.Games[gameID]

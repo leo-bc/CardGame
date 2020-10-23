@@ -12,7 +12,9 @@ import (
 // HandleGETResponse : adds data to the body of a GET response
 func HandleGETResponse(w http.ResponseWriter, data interface{}) {
 	w.Header().Set("Content-Type", "application/json")
-	json.NewEncoder(w).Encode(data)
+	encoder := json.NewEncoder(w)
+	encoder.SetIndent("", "    ")
+	encoder.Encode(data)
 }
 
 // HandlePOSTResponse : returns a response to a POST request

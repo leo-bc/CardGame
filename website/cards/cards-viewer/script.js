@@ -12,19 +12,19 @@ async function loadCards() {
             clone.hidden = false;
             clone.dataset.id = cards[i].ID;
             clone.id = `card-${cards[i].ID}`;
-            clone.querySelector("#title-text").innerHTML = cards[i].Info.Identity.Title;
-            clone.querySelector("#card-type-text").innerHTML = cards[i].Info.Identity.Type;
-            clone.querySelector("#description-text").innerHTML = cards[i].Info.Identity.Description;
-            if (cards[i].Info.Rank.Ranking == "Legend") {
+            clone.querySelector("#title-text").innerHTML = cards[i].Identity.Title;
+            clone.querySelector("#card-type-text").innerHTML = cards[i].Identity.Type;
+            clone.querySelector("#description-text").innerHTML = cards[i].Identity.Description;
+            if (cards[i].Rank.Ranking == "Legend") {
                 clone.style.backgroundColor = '#dbc96e';
-            } else if (cards[i].Info.Rank.Ranking == "Rare") {
+            } else if (cards[i].Rank.Ranking == "Rare") {
                 clone.style.backgroundColor = '#ababab';
             } else {
                 clone.style.backgroundColor = '#b8946a';
             }
 
-            for (var j = 0; j < cards[i].Info.Attacks.length; j++) {
-                var attack = cards[i].Info.Attacks[j];
+            for (var j = 0; j < cards[i].Attacks.length; j++) {
+                var attack = cards[i].Attacks[j];
                 var attackClone = attackPrefab.cloneNode(true);
                 attackClone.hidden = false;
                 attackClone.id = `attack-${j}`;

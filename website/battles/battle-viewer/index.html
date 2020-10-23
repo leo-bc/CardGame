@@ -4,9 +4,17 @@
 <link href='style.css' rel='stylesheet' />
 
 <body>
-    <button id="start-game-button" onclick="startBattle()">Start Game!</button>
-    <div id="card-slot-prefab" class="card-slot" hidden>
+    <button id="start-game-button" onclick="startBattle()" disabled>Start Game!</button>
+    <div id="attack-prefab" class="attack" data-id="-1" hidden>
+        <p id="name-text"></p>
+        <p id="damage-text"></p>
+        <button id="attack-button" onclick="attack(this.parentElement)" hidden>Use attack</button>
+    </div>
+    <div id="card-slot-prefab" class="card-slot" data-id="-1" hidden>
         <p id="card-text"></p>
+        <p id="hp-text"></p>
+        <div id="attack-list"></div>
+        <button id="play-card-button" onclick="playCard(this.parentElement)" hidden>Play card!</button>
     </div>
     <div id="player-side-prefab" data-side-id="-1" hidden>
         <h1>PLAYER</h1>

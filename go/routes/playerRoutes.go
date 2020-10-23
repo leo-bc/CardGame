@@ -5,7 +5,6 @@ import (
 	"strconv"
 
 	"../lio"
-	"../model"
 	"github.com/julienschmidt/httprouter"
 )
 
@@ -21,10 +20,9 @@ func SetPlayerRoutes() {
 // GETPlayer :
 func GETPlayer(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
 	id := lio.GetIntParam(ps, "id")
-	index := model.GetIndexFromID(model.GetPlayerIDs(state), id)
 
-	if index != -1 {
-		lio.HandleGETResponse(w, state.Players[index].Info)
+	if id != -1 {
+		lio.HandleGETResponse(w, state.Players[id])
 	} else {
 		lio.HandleGETResponse(w, "")
 	}
@@ -49,11 +47,11 @@ func GETCurrentPlayer(w http.ResponseWriter, r *http.Request, ps httprouter.Para
 	index := -1
 	if cookieResult != "" {
 		id, _ := strconv.Atoi(cookieResult)
-		index = model.GetIndexFromID(model.GetPlayerIDs(state), id)
+		index = id
 	}
 
 	if index != -1 {
-		lio.HandleGETResponse(w, state.Players[index].Info)
+		lio.HandleGETResponse(w, state.Players[index])
 	} else {
 		lio.HandleGETResponse(w, "")
 	}
