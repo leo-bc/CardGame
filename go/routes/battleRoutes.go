@@ -87,7 +87,8 @@ func POSTBattleAttack(w http.ResponseWriter, r *http.Request, ps httprouter.Para
 			playerSide = &battle.Sides[1]
 			opponentSide = &battle.Sides[0]
 		}
-		model.AttackCard(state, playerSide, opponentSide, info)
+
+		model.AttackCard(state, battle, playerSide, opponentSide, info, vm)
 		battle.SetUpdated()
 	}
 	lio.HandlePOSTResponse(w)
@@ -100,7 +101,7 @@ func POSTBattleStart(w http.ResponseWriter, r *http.Request, ps httprouter.Param
 
 	if gameID != -1 && battleID != -1 {
 		battle := &state.Games[gameID].Info.Battles[battleID]
-		battle.IsStarted = true
+		battle.Info.IsStarted = true
 		model.StartBattle(battle)
 		battle.SetUpdated()
 	}
@@ -142,14 +143,14 @@ func GETBattle(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
 	if gameID != -1 && battleID != -1 && len(state.Games) > gameID && len(state.Games[gameID].Info.Battles) > battleID {
 		battle := state.Games[gameID].Info.Battles[battleID]
 
-		allSides, allCards := createClientBattleSides(&battle.Sides, battle.Turn, playerID)
+		allSides, allCards := createClientBattleSides(&battle.Sides, battle.Info.Turn, playerID)
 
 		cards := make(map[int]model.Card)
 		for _, cardID := range allCards {
 			cards[cardID] = state.Cards[cardID]
 		}
 
-		clientBattle := model.ClientBattle{Sides: *allSides, Cards: cards, Turn: battle.Turn, IsStarted: battle.IsStarted}
+		clientBattle := model.ClientBattle{Sides: *allSides, Cards: cards, Info: battle.Info}
 		lio.HandleGETResponse(w, clientBattle)
 	} else {
 		lio.HandleGETResponse(w, "")

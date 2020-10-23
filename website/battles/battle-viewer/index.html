@@ -4,7 +4,10 @@
 <link href='style.css' rel='stylesheet' />
 
 <body>
-    <button id="start-game-button" onclick="startBattle()" disabled>Start Game!</button>
+    <button id="start-battle-button" onclick="startBattle()" disabled>Start Battle!</button>
+    <button id="back-to-game-button" onclick="backToGame()">Back to game</button>
+    </p>Game status: <span id="status-text"></span></p>
+
     <div id="attack-prefab" class="attack" data-id="-1" hidden>
         <p id="name-text"></p>
         <p id="damage-text"></p>
@@ -35,6 +38,10 @@
         <div id="throw-pile">
             <div id="throw-pile-list" class="slot-list"></div>
         </div>
+        <h2>Prizes:</h2>
+        <div id="prizes">
+            <div id="prizes-list" class="slot-list"></div>
+        </div>
     </div>
 
     <div id="opponent-side-prefab" data-side-id="-1" hidden>
@@ -54,6 +61,10 @@
         <h2>Throw pile:</h2>
         <div id="throw-pile">
             <div id="throw-pile-list" class="slot-list"></div>
+        </div>
+        <h2>Prizes:</h2>
+        <div id="prizes">
+            <div id="prizes-list" class="slot-list"></div>
         </div>
     </div>
 

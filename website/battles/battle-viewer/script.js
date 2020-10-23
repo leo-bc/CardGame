@@ -1,3 +1,25 @@
+async function loadBattle() {
+    var battle = await sendGET(`/battle/${gameID}/${battleID}/`);
+    IDtoCards = battle.Cards;
+    if (Object.keys(battle).length !== 0) {
+        document.getElementById("start-battle-button").disabled = battle.Info.IsStarted;
+        var status = document.getElementById("status-text");
+        if (battle.Info.IsStarted && !battle.Info.IsFinished) {
+            status.innerHTML = `kuk`;
+        } else if (battle.Info.IsFinished) {
+            status.innerHTML = `Game ended! won by ${battle.Info.Winner}`;
+        } else {
+            status.innerHTML = "Game not started!";
+        }
+
+        var side0 = battle.Sides[0];
+        var side1 = battle.Sides[1];
+        document.getElementById("battle-side-list").innerHTML = "";
+        showSide(side0, side1);
+        showSide(side1, side0);
+    }
+}
+
 function setCardSlot(element, slot, hidden) {
     if (slot.CardID == -1) {
         element.querySelector("#card-text").innerHTML = "Hidden card";
@@ -23,23 +45,11 @@ function setCardSlot(element, slot, hidden) {
     }
 }
 
-async function loadBattle() {
-    var battle = await sendGET(`/battle/${gameID}/${battleID}/`);
-    IDtoCards = battle.Cards;
-    if (Object.keys(battle).length !== 0) {
-        document.getElementById("start-game-button").disabled = battle.IsStarted;
 
-        var side0 = battle.Sides[0];
-        var side1 = battle.Sides[1];
-        document.getElementById("battle-side-list").innerHTML = "";
-        showSide(side0);
-        showSide(side1);
-    }
-}
 
-function showSide(side) {
+function showSide(side, opponentSide) {
     if (side.IsPlayer) {
-        showPlayerSide(side);
+        showPlayerSide(side, opponentSide);
     } else {
         showOpponentSide(side);
     }
@@ -50,15 +60,18 @@ async function startBattle() {
     refresh();
 }
 
-function showPlayerSide(side) {
+function showPlayerSide(side, opponentSide) {
     var sidePrefab = document.getElementById("player-side-prefab");
     var clone = sidePrefab.cloneNode(true);
     clone.hidden = false;
 
     var cardSlotPrefab = document.getElementById("card-slot-prefab");
-    showBench(side.Cards["Bench"], clone, cardSlotPrefab, !side.IsTurn);
-    showHand(side.Cards["Hand"], clone, cardSlotPrefab, !side.IsTurn);
-    showTakePile(side.Cards["TakePile"], clone, cardSlotPrefab);
+    showBench(side.Cards["Bench"], clone, cardSlotPrefab, !side.IsTurn || opponentSide.Cards["Bench"].length == 0);
+    showHand(side.Cards["Hand"], clone, cardSlotPrefab, !side.IsTurn || side.Cards["Bench"].length != 0);
+    showTakePile(side.Cards["TakePile"], clone);
+    showThrowPile(side.Cards["ThrowPile"], clone);
+    showPrizes(side.Cards["Prizes"], clone);
+
     clone.querySelector("#end-turn-button").disabled = !side.IsTurn;
 
     document.getElementById("battle-side-list").appendChild(clone);
@@ -72,7 +85,9 @@ function showOpponentSide(side) {
     var cardSlotPrefab = document.getElementById("card-slot-prefab");
     showBench(side.Cards["Bench"], clone, cardSlotPrefab, true);
     showHand(side.Cards["Hand"], clone, cardSlotPrefab, true);
-    showTakePile(side.Cards["TakePile"], clone, cardSlotPrefab);
+    showTakePile(side.Cards["TakePile"], clone);
+    showThrowPile(side.Cards["ThrowPile"], clone);
+    showPrizes(side.Cards["Prizes"], clone);
 
     document.getElementById("battle-side-list").appendChild(clone);
 }
@@ -115,8 +130,8 @@ class AttackInfo {
 }
 
 async function attack(element) {
-    var sourceID = element.parentElement.parentElement.dataset.id;
-    var attackID = element.dataset.id;
+    var sourceID = parseInt(element.parentElement.parentElement.dataset.id);
+    var attackID = parseInt(element.dataset.id);
     var info = new AttackInfo(sourceID, attackID, 0);
     await sendPOST(`/battle-attack/${gameID}/${battleID}/`, info)
     refresh();
@@ -128,11 +143,20 @@ async function playCard(element) {
     refresh();
 }
 
-function showTakePile(takePile, parent, cardSlotPrefab) {
+function showTakePile(takePile, parent) {
     var takePileList = parent.querySelector("#take-pile-list")
     takePileList.innerHTML = `Take pile size: ${takePile.length}`;
 }
 
+function showThrowPile(throwPile, parent) {
+    var throwPileList = parent.querySelector("#throw-pile-list")
+    throwPileList.innerHTML = `Throw pile size: ${throwPile.length}`;
+}
+
+function showPrizes(prizes, parent) {
+    var prizesList = parent.querySelector("#prizes-list")
+    prizesList.innerHTML = `Prize cards left: ${prizes.length}`;
+}
 
 async function endTurn(element) {
     await sendPOST(`/battle-end-turn/${gameID}/${battleID}/`, "");
@@ -148,8 +172,12 @@ async function refresh() {
     }
 }
 
+function backToGame() {
+    window.location.href = `/website/games/game-viewer/?id=${gameID}`
+}
+
 var IDtoCards = {};
-var updateID = 0;
+var updateID = -1;
 
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);

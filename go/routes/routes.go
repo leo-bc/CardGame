@@ -7,17 +7,20 @@ import (
 	"../model"
 	"github.com/gorilla/securecookie"
 	"github.com/julienschmidt/httprouter"
+	"github.com/robertkrimen/otto"
 )
 
 var router *httprouter.Router
 var cookieEncoder *securecookie.SecureCookie
 var state *model.State
+var vm *otto.Otto
 
 // SetRoutes :
-func SetRoutes(r *httprouter.Router, c *securecookie.SecureCookie, s *model.State) {
+func SetRoutes(r *httprouter.Router, c *securecookie.SecureCookie, s *model.State, v *otto.Otto) {
 	router = r
 	cookieEncoder = c
 	state = s
+	vm = v
 	router.GET("/to-json/:with-cards", GETJSON)
 
 	SetPlayerRoutes()

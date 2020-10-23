@@ -24,9 +24,16 @@ type GameInfo struct {
 // Battle :
 type Battle struct {
 	Updateable
-	Sides     []BattleSide
-	Turn      int
-	IsStarted bool
+	Sides []BattleSide
+	Info  BattleInfo
+}
+
+// BattleInfo :
+type BattleInfo struct {
+	Turn       int
+	IsStarted  bool
+	IsFinished bool
+	Winner     int
 }
 
 // BattleSide :
@@ -58,6 +65,7 @@ func (container *CardsContainer) Replace(slots []CardSlot) {
 // CardSlot :
 type CardSlot struct {
 	CardID      int
+	Status      string
 	DamageTaken int
 }
 

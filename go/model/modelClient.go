@@ -2,10 +2,9 @@ package model
 
 // ClientBattle :
 type ClientBattle struct {
-	Sides     []ClientBattleSide
-	Cards     map[int]Card
-	Turn      int
-	IsStarted bool
+	Sides []ClientBattleSide
+	Cards map[int]Card
+	Info  BattleInfo
 }
 
 // ClientBattleSide :
