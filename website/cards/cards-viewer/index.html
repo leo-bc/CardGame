@@ -7,17 +7,28 @@
     <p>Player: </p>
     <p id="name-text"></p>
     <button onclick="backToGame()">Back to game</button>
-    <button onclick="createCard()">Create card</button>
-    <div id="card-prefab" class="card" data-id="-1" hidden>
+
+    <div id="attack-prefab" class="attack" hidden>
+        <h3>Name:</h3>
+        <p id="name-text"></p>
+        <h3>Cost:</h3>
+        <p id="cost-text"></p>
+        <h3>Damage:</h3>
+        <p id="damage-text"></p>
+    </div>
+
+    <div id="card-prefab" class="card" hidden>
         <h2>Title:</h2>
         <p id="title-text"></p>
         <h2>Description:</h2>
         <p id="description-text"></p>
         <h2>Type:</h2>
         <p id="card-type-text"></p>
-        <button onclick="editCard(this.parentElement)">Edit card</button>
-        <button onclick="removeCard(this.parentElement)">Remove card</button>
+        <h2>Attacks:</h2>
+        <div id="attack-list"></div>
     </div>
+
+
     <div id="card-list"></div>
 </body>
 <script src="../../io.js"></script>

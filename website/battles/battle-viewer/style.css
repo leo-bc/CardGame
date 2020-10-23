@@ -19,7 +19,7 @@
 }
 
 .card-slot {
-    height: 100px;
+    height: 300px;
     width: 100px;
     background-color: lime;
     float: left;
@@ -29,4 +29,8 @@
 
 .slot-list {
     overflow: hidden;
+}
+
+.attack {
+    background-color: tomato;
 }

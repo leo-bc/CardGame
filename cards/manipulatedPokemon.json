@@ -1,0 +1,1147 @@
+[
+    {
+        "Identity": {
+            "Title": "Charizard"
+        },
+        "Rank": {
+            "Level": 76,
+            "HP": 120
+        },
+        "Attacks": [
+            {
+                "Name": "Fire Spin",
+                "Cost": 4,
+                "Damage": 100
+            }
+        ]
+    },
+    {
+        "Identity": {
+            "Title": "Machamp"
+        },
+        "Rank": {
+            "Level": 67,
+            "HP": 100
+        },
+        "Attacks": [
+            {
+                "Name": "Seismic Toss",
+                "Cost": 4,
+                "Damage": 60
+            }
+        ]
+    },
+    {
+        "Identity": {
+            "Title": "Venusaur"
+        },
+        "Rank": {
+            "Level": 67,
+            "HP": 100
+        },
+        "Attacks": [
+            {
+                "Name": "Solarbeam",
+                "Cost": 4,
+                "Damage": 60
+            }
+        ]
+    },
+    {
+        "Identity": {
+            "Title": "Zapdos"
+        },
+        "Rank": {
+            "Level": 64,
+            "HP": 90
+        },
+        "Attacks": [
+            {
+                "Name": "Thunder",
+                "Cost": 4,
+                "Damage": 60
+            },
+            {
+                "Name": "Thunderbolt",
+                "Cost": 4,
+                "Damage": 100
+            }
+        ]
+    },
+    {
+        "Identity": {
+            "Title": "Chansey"
+        },
+        "Rank": {
+            "Level": 55,
+            "HP": 120
+        },
+        "Attacks": [
+            {
+                "Name": "Double-edge",
+                "Cost": 4,
+                "Damage": 80
+            }
+        ]
+    },
+    {
+        "Identity": {
+            "Title": "Mewtwo"
+        },
+        "Rank": {
+            "Level": 53,
+            "HP": 60
+        },
+        "Attacks": []
+    },
+    {
+        "Identity": {
+            "Title": "Blastoise"
+        },
+        "Rank": {
+            "Level": 52,
+            "HP": 100
+        },
+        "Attacks": []
+    },
+    {
+        "Identity": {
+            "Title": "Poliwrath"
+        },
+        "Rank": {
+            "Level": 48,
+            "HP": 90
+        },
+        "Attacks": [
+            {
+                "Name": "Whirlpool",
+                "Cost": 4,
+                "Damage": 40
+            }
+        ]
+    },
+    {
+        "Identity": {
+            "Title": "Arcanine"
+        },
+        "Rank": {
+            "Level": 45,
+            "HP": 100
+        },
+        "Attacks": [
+            {
+                "Name": "Flamethrower",
+                "Cost": 3,
+                "Damage": 50
+            },
+            {
+                "Name": "Take Down",
+                "Cost": 4,
+                "Damage": 80
+            }
+        ]
+    },
+    {
+        "Identity": {
+            "Title": "Alakazam"
+        },
+        "Rank": {
+            "Level": 42,
+            "HP": 80
+        },
+        "Attacks": [
+            {
+                "Name": "Confuse Ray",
+                "Cost": 3,
+                "Damage": 30
+            }
+        ]
+    },
+    {
+        "Identity": {
+            "Title": "Dewgong"
+        },
+        "Rank": {
+            "Level": 42,
+            "HP": 80
+        },
+        "Attacks": [
+            {
+                "Name": "Aurora Beam",
+                "Cost": 3,
+                "Damage": 50
+            },
+            {
+                "Name": "Ice Beam",
+                "Cost": 4,
+                "Damage": 30
+            }
+        ]
+    },
+    {
+        "Identity": {
+            "Title": "Gyarados"
+        },
+        "Rank": {
+            "Level": 41,
+            "HP": 100
+        },
+        "Attacks": [
+            {
+                "Name": "Dragon Rage",
+                "Cost": 3,
+                "Damage": 50
+            },
+            {
+                "Name": "Bubblebeam",
+                "Cost": 4,
+                "Damage": 40
+            }
+        ]
+    },
+    {
+        "Identity": {
+            "Title": "Raticate"
+        },
+        "Rank": {
+            "Level": 41,
+            "HP": 60
+        },
+        "Attacks": [
+            {
+                "Name": "Bite",
+                "Cost": 1,
+                "Damage": 20
+            }
+        ]
+    },
+    {
+        "Identity": {
+            "Title": "Raichu"
+        },
+        "Rank": {
+            "Level": 40,
+            "HP": 80
+        },
+        "Attacks": [
+            {
+                "Name": "Agility",
+                "Cost": 3,
+                "Damage": 20
+            },
+            {
+                "Name": "Thunder",
+                "Cost": 4,
+                "Damage": 60
+            }
+        ]
+    },
+    {
+        "Identity": {
+            "Title": "Electrode"
+        },
+        "Rank": {
+            "Level": 40,
+            "HP": 80
+        },
+        "Attacks": [
+            {
+                "Name": "Electric Shock",
+                "Cost": 3,
+                "Damage": 50
+            }
+        ]
+    },
+    {
+        "Identity": {
+            "Title": "Machoke"
+        },
+        "Rank": {
+            "Level": 40,
+            "HP": 80
+        },
+        "Attacks": [
+            {
+                "Name": "Submission",
+                "Cost": 4,
+                "Damage": 60
+            }
+        ]
+    },
+    {
+        "Identity": {
+            "Title": "Kadabra"
+        },
+        "Rank": {
+            "Level": 38,
+            "HP": 60
+        },
+        "Attacks": [
+            {
+                "Name": "Super Psy",
+                "Cost": 3,
+                "Damage": 50
+            }
+        ]
+    },
+    {
+        "Identity": {
+            "Title": "Dugtrio"
+        },
+        "Rank": {
+            "Level": 36,
+            "HP": 70
+        },
+        "Attacks": [
+            {
+                "Name": "Slash",
+                "Cost": 3,
+                "Damage": 40
+            },
+            {
+                "Name": "Earthquake",
+                "Cost": 4,
+                "Damage": 70
+            }
+        ]
+    },
+    {
+        "Identity": {
+            "Title": "Pidgeotto"
+        },
+        "Rank": {
+            "Level": 36,
+            "HP": 60
+        },
+        "Attacks": [
+            {
+                "Name": "Whirlwind",
+                "Cost": 2,
+                "Damage": 20
+            }
+        ]
+    },
+    {
+        "Identity": {
+            "Title": "Electabuzz"
+        },
+        "Rank": {
+            "Level": 35,
+            "HP": 70
+        },
+        "Attacks": [
+            {
+                "Name": "Thundershock",
+                "Cost": 1,
+                "Damage": 10
+            }
+        ]
+    },
+    {
+        "Identity": {
+            "Title": "Hitmonchan"
+        },
+        "Rank": {
+            "Level": 33,
+            "HP": 70
+        },
+        "Attacks": [
+            {
+                "Name": "Jab",
+                "Cost": 1,
+                "Damage": 20
+            },
+            {
+                "Name": "Special Punch",
+                "Cost": 3,
+                "Damage": 40
+            }
+        ]
+    },
+    {
+        "Identity": {
+            "Title": "Dragonair"
+        },
+        "Rank": {
+            "Level": 33,
+            "HP": 80
+        },
+        "Attacks": [
+            {
+                "Name": "Hyper Beam",
+                "Cost": 4,
+                "Damage": 20
+            }
+        ]
+    },
+    {
+        "Identity": {
+            "Title": "Ninetales"
+        },
+        "Rank": {
+            "Level": 32,
+            "HP": 80
+        },
+        "Attacks": [
+            {
+                "Name": "Fire Blast",
+                "Cost": 4,
+                "Damage": 80
+            }
+        ]
+    },
+    {
+        "Identity": {
+            "Title": "Beedrill"
+        },
+        "Rank": {
+            "Level": 32,
+            "HP": 80
+        },
+        "Attacks": [
+            {
+                "Name": "Poison Sting",
+                "Cost": 3,
+                "Damage": 40
+            }
+        ]
+    },
+    {
+        "Identity": {
+            "Title": "Charmeleon"
+        },
+        "Rank": {
+            "Level": 32,
+            "HP": 80
+        },
+        "Attacks": [
+            {
+                "Name": "Slash",
+                "Cost": 3,
+                "Damage": 30
+            },
+            {
+                "Name": "Flamethrower",
+                "Cost": 3,
+                "Damage": 50
+            }
+        ]
+    },
+    {
+        "Identity": {
+            "Title": "Magneton"
+        },
+        "Rank": {
+            "Level": 28,
+            "HP": 60
+        },
+        "Attacks": [
+            {
+                "Name": "Thunder Wave",
+                "Cost": 3,
+                "Damage": 30
+            },
+            {
+                "Name": "Selfdestruct",
+                "Cost": 4,
+                "Damage": 80
+            }
+        ]
+    },
+    {
+        "Identity": {
+            "Title": "Poliwhirl"
+        },
+        "Rank": {
+            "Level": 28,
+            "HP": 60
+        },
+        "Attacks": []
+    },
+    {
+        "Identity": {
+            "Title": "Starmie"
+        },
+        "Rank": {
+            "Level": 28,
+            "HP": 60
+        },
+        "Attacks": [
+            {
+                "Name": "Star Freeze",
+                "Cost": 3,
+                "Damage": 20
+            }
+        ]
+    },
+    {
+        "Identity": {
+            "Title": "Nidorino"
+        },
+        "Rank": {
+            "Level": 25,
+            "HP": 60
+        },
+        "Attacks": [
+            {
+                "Name": "Horn Drill",
+                "Cost": 4,
+                "Damage": 50
+            }
+        ]
+    },
+    {
+        "Identity": {
+            "Title": "Magmar"
+        },
+        "Rank": {
+            "Level": 24,
+            "HP": 50
+        },
+        "Attacks": [
+            {
+                "Name": "Fire Punch",
+                "Cost": 2,
+                "Damage": 30
+            },
+            {
+                "Name": "Flamethrower",
+                "Cost": 3,
+                "Damage": 50
+            }
+        ]
+    },
+    {
+        "Identity": {
+            "Title": "Nidoking"
+        },
+        "Rank": {
+            "Level": 23,
+            "HP": 90
+        },
+        "Attacks": [
+            {
+                "Name": "Toxic",
+                "Cost": 3,
+                "Damage": 40
+            }
+        ]
+    },
+    {
+        "Identity": {
+            "Title": "Jynx"
+        },
+        "Rank": {
+            "Level": 23,
+            "HP": 70
+        },
+        "Attacks": []
+    },
+    {
+        "Identity": {
+            "Title": "Kakuna"
+        },
+        "Rank": {
+            "Level": 23,
+            "HP": 80
+        },
+        "Attacks": [
+            {
+                "Name": "Poisonpowder",
+                "Cost": 2,
+                "Damage": 20
+            }
+        ]
+    },
+    {
+        "Identity": {
+            "Title": "Haunter"
+        },
+        "Rank": {
+            "Level": 22,
+            "HP": 60
+        },
+        "Attacks": [
+            {
+                "Name": "Dream Eater",
+                "Cost": 2,
+                "Damage": 50
+            }
+        ]
+    },
+    {
+        "Identity": {
+            "Title": "Wartortle"
+        },
+        "Rank": {
+            "Level": 22,
+            "HP": 70
+        },
+        "Attacks": [
+            {
+                "Name": "Bite",
+                "Cost": 3,
+                "Damage": 40
+            }
+        ]
+    },
+    {
+        "Identity": {
+            "Title": "Metapod"
+        },
+        "Rank": {
+            "Level": 21,
+            "HP": 70
+        },
+        "Attacks": [
+            {
+                "Name": "Stun Spore",
+                "Cost": 2,
+                "Damage": 20
+            }
+        ]
+    },
+    {
+        "Identity": {
+            "Title": "Farfetch'd"
+        },
+        "Rank": {
+            "Level": 20,
+            "HP": 50
+        },
+        "Attacks": [
+            {
+                "Name": "Leek Slap",
+                "Cost": 1,
+                "Damage": 30
+            },
+            {
+                "Name": "Pot Smash",
+                "Cost": 3,
+                "Damage": 30
+            }
+        ]
+    },
+    {
+        "Identity": {
+            "Title": "Ivysaur"
+        },
+        "Rank": {
+            "Level": 20,
+            "HP": 60
+        },
+        "Attacks": [
+            {
+                "Name": "Vine Whip",
+                "Cost": 3,
+                "Damage": 30
+            },
+            {
+                "Name": "Poisonpowder",
+                "Cost": 3,
+                "Damage": 30
+            }
+        ]
+    },
+    {
+        "Identity": {
+            "Title": "Machop"
+        },
+        "Rank": {
+            "Level": 20,
+            "HP": 50
+        },
+        "Attacks": [
+            {
+                "Name": "Low Kick",
+                "Cost": 1,
+                "Damage": 20
+            }
+        ]
+    },
+    {
+        "Identity": {
+            "Title": "Nidoran\u2642"
+        },
+        "Rank": {
+            "Level": 20,
+            "HP": 40
+        },
+        "Attacks": [
+            {
+                "Name": "Horn Hazard",
+                "Cost": 1,
+                "Damage": 30
+            }
+        ]
+    },
+    {
+        "Identity": {
+            "Title": "Growlithe"
+        },
+        "Rank": {
+            "Level": 18,
+            "HP": 60
+        },
+        "Attacks": [
+            {
+                "Name": "Flare",
+                "Cost": 2,
+                "Damage": 20
+            }
+        ]
+    },
+    {
+        "Identity": {
+            "Title": "Staryu"
+        },
+        "Rank": {
+            "Level": 15,
+            "HP": 40
+        },
+        "Attacks": [
+            {
+                "Name": "Slap",
+                "Cost": 1,
+                "Damage": 20
+            }
+        ]
+    },
+    {
+        "Identity": {
+            "Title": "Clefairy"
+        },
+        "Rank": {
+            "Level": 14,
+            "HP": 40
+        },
+        "Attacks": []
+    },
+    {
+        "Identity": {
+            "Title": "Bulbasaur"
+        },
+        "Rank": {
+            "Level": 13,
+            "HP": 40
+        },
+        "Attacks": [
+            {
+                "Name": "Leech Seed",
+                "Cost": 2,
+                "Damage": 20
+            }
+        ]
+    },
+    {
+        "Identity": {
+            "Title": "Caterpie"
+        },
+        "Rank": {
+            "Level": 13,
+            "HP": 40
+        },
+        "Attacks": [
+            {
+                "Name": "String Shot",
+                "Cost": 1,
+                "Damage": 10
+            }
+        ]
+    },
+    {
+        "Identity": {
+            "Title": "Koffing"
+        },
+        "Rank": {
+            "Level": 13,
+            "HP": 50
+        },
+        "Attacks": [
+            {
+                "Name": "Foul Gas",
+                "Cost": 2,
+                "Damage": 10
+            }
+        ]
+    },
+    {
+        "Identity": {
+            "Title": "Magnemite"
+        },
+        "Rank": {
+            "Level": 13,
+            "HP": 40
+        },
+        "Attacks": [
+            {
+                "Name": "Thunder Wave",
+                "Cost": 1,
+                "Damage": 10
+            },
+            {
+                "Name": "Selfdestruct",
+                "Cost": 2,
+                "Damage": 40
+            }
+        ]
+    },
+    {
+        "Identity": {
+            "Title": "Poliwag"
+        },
+        "Rank": {
+            "Level": 13,
+            "HP": 40
+        },
+        "Attacks": []
+    },
+    {
+        "Identity": {
+            "Title": "Porygon"
+        },
+        "Rank": {
+            "Level": 12,
+            "HP": 30
+        },
+        "Attacks": []
+    },
+    {
+        "Identity": {
+            "Title": "Seel"
+        },
+        "Rank": {
+            "Level": 12,
+            "HP": 60
+        },
+        "Attacks": [
+            {
+                "Name": "Headbutt",
+                "Cost": 1,
+                "Damage": 10
+            }
+        ]
+    },
+    {
+        "Identity": {
+            "Title": "Onix"
+        },
+        "Rank": {
+            "Level": 12,
+            "HP": 90
+        },
+        "Attacks": [
+            {
+                "Name": "Rock Throw",
+                "Cost": 1,
+                "Damage": 10
+            }
+        ]
+    },
+    {
+        "Identity": {
+            "Title": "Pikachu"
+        },
+        "Rank": {
+            "Level": 12,
+            "HP": 40
+        },
+        "Attacks": [
+            {
+                "Name": "Gnaw",
+                "Cost": 1,
+                "Damage": 10
+            },
+            {
+                "Name": "Thunder Jolt",
+                "Cost": 2,
+                "Damage": 30
+            }
+        ]
+    },
+    {
+        "Identity": {
+            "Title": "Sandshrew"
+        },
+        "Rank": {
+            "Level": 12,
+            "HP": 40
+        },
+        "Attacks": [
+            {
+                "Name": "Sand-attack",
+                "Cost": 1,
+                "Damage": 10
+            }
+        ]
+    },
+    {
+        "Identity": {
+            "Title": "Weedle"
+        },
+        "Rank": {
+            "Level": 12,
+            "HP": 40
+        },
+        "Attacks": [
+            {
+                "Name": "Poison Sting",
+                "Cost": 1,
+                "Damage": 10
+            }
+        ]
+    },
+    {
+        "Identity": {
+            "Title": "Vulpix"
+        },
+        "Rank": {
+            "Level": 11,
+            "HP": 50
+        },
+        "Attacks": [
+            {
+                "Name": "Confuse Ray",
+                "Cost": 2,
+                "Damage": 10
+            }
+        ]
+    },
+    {
+        "Identity": {
+            "Title": "Dratini"
+        },
+        "Rank": {
+            "Level": 10,
+            "HP": 40
+        },
+        "Attacks": [
+            {
+                "Name": "Pound",
+                "Cost": 1,
+                "Damage": 10
+            }
+        ]
+    },
+    {
+        "Identity": {
+            "Title": "Abra"
+        },
+        "Rank": {
+            "Level": 10,
+            "HP": 30
+        },
+        "Attacks": [
+            {
+                "Name": "Psyshock",
+                "Cost": 1,
+                "Damage": 10
+            }
+        ]
+    },
+    {
+        "Identity": {
+            "Title": "Charmander"
+        },
+        "Rank": {
+            "Level": 10,
+            "HP": 50
+        },
+        "Attacks": [
+            {
+                "Name": "Scratch",
+                "Cost": 1,
+                "Damage": 10
+            },
+            {
+                "Name": "Ember",
+                "Cost": 2,
+                "Damage": 30
+            }
+        ]
+    },
+    {
+        "Identity": {
+            "Title": "Doduo"
+        },
+        "Rank": {
+            "Level": 10,
+            "HP": 50
+        },
+        "Attacks": []
+    },
+    {
+        "Identity": {
+            "Title": "Drowzee"
+        },
+        "Rank": {
+            "Level": 10,
+            "HP": 50
+        },
+        "Attacks": [
+            {
+                "Name": "Pound",
+                "Cost": 1,
+                "Damage": 10
+            },
+            {
+                "Name": "Confuse Ray",
+                "Cost": 2,
+                "Damage": 10
+            }
+        ]
+    },
+    {
+        "Identity": {
+            "Title": "Ponyta"
+        },
+        "Rank": {
+            "Level": 10,
+            "HP": 40
+        },
+        "Attacks": [
+            {
+                "Name": "Smash Kick",
+                "Cost": 2,
+                "Damage": 20
+            },
+            {
+                "Name": "Flame Tail",
+                "Cost": 2,
+                "Damage": 30
+            }
+        ]
+    },
+    {
+        "Identity": {
+            "Title": "Voltorb"
+        },
+        "Rank": {
+            "Level": 10,
+            "HP": 40
+        },
+        "Attacks": [
+            {
+                "Name": "Tackle",
+                "Cost": 1,
+                "Damage": 10
+            }
+        ]
+    },
+    {
+        "Identity": {
+            "Title": "Rattata"
+        },
+        "Rank": {
+            "Level": 9,
+            "HP": 30
+        },
+        "Attacks": [
+            {
+                "Name": "Bite",
+                "Cost": 1,
+                "Damage": 20
+            }
+        ]
+    },
+    {
+        "Identity": {
+            "Title": "Magikarp"
+        },
+        "Rank": {
+            "Level": 8,
+            "HP": 30
+        },
+        "Attacks": [
+            {
+                "Name": "Tackle",
+                "Cost": 1,
+                "Damage": 10
+            }
+        ]
+    },
+    {
+        "Identity": {
+            "Title": "Diglett"
+        },
+        "Rank": {
+            "Level": 8,
+            "HP": 30
+        },
+        "Attacks": [
+            {
+                "Name": "Dig",
+                "Cost": 1,
+                "Damage": 10
+            },
+            {
+                "Name": "Mud Slap",
+                "Cost": 2,
+                "Damage": 30
+            }
+        ]
+    },
+    {
+        "Identity": {
+            "Title": "Gastly"
+        },
+        "Rank": {
+            "Level": 8,
+            "HP": 30
+        },
+        "Attacks": []
+    },
+    {
+        "Identity": {
+            "Title": "Pidgey"
+        },
+        "Rank": {
+            "Level": 8,
+            "HP": 40
+        },
+        "Attacks": [
+            {
+                "Name": "Whirlwind",
+                "Cost": 2,
+                "Damage": 10
+            }
+        ]
+    },
+    {
+        "Identity": {
+            "Title": "Squirtle"
+        },
+        "Rank": {
+            "Level": 8,
+            "HP": 40
+        },
+        "Attacks": [
+            {
+                "Name": "Bubble",
+                "Cost": 1,
+                "Damage": 10
+            }
+        ]
+    },
+    {
+        "Identity": {
+            "Title": "Tangela"
+        },
+        "Rank": {
+            "Level": 8,
+            "HP": 50
+        },
+        "Attacks": [
+            {
+                "Name": "Bind",
+                "Cost": 2,
+                "Damage": 20
+            },
+            {
+                "Name": "Poisonpowder",
+                "Cost": 3,
+                "Damage": 30
+            }
+        ]
+    }
+]

@@ -1,0 +1,2190 @@
+{
+    "Games": [
+        {
+            "UpdateID": 1,
+            "Info": {
+                "Title": "Cool game!",
+                "Players": [
+                    {
+                        "PlayerID": 0,
+                        "CardIDs": [
+                            25,
+                            18,
+                            68,
+                            44,
+                            30,
+                            65,
+                            17,
+                            43,
+                            34,
+                            60,
+                            1,
+                            28,
+                            67,
+                            22,
+                            62,
+                            30,
+                            39,
+                            65,
+                            59,
+                            1,
+                            24,
+                            1,
+                            65,
+                            47,
+                            19,
+                            34,
+                            37,
+                            4,
+                            68,
+                            19,
+                            66,
+                            35,
+                            42,
+                            4,
+                            15,
+                            50,
+                            47,
+                            62,
+                            29,
+                            16,
+                            6,
+                            60,
+                            4,
+                            62,
+                            13,
+                            51,
+                            37,
+                            36,
+                            46,
+                            57,
+                            7,
+                            20,
+                            40,
+                            21,
+                            17,
+                            51,
+                            0,
+                            29,
+                            47,
+                            44
+                        ],
+                        "IsReady": true
+                    },
+                    {
+                        "PlayerID": 1,
+                        "CardIDs": [
+                            49,
+                            64,
+                            0,
+                            10,
+                            55,
+                            41,
+                            23,
+                            56,
+                            42,
+                            43,
+                            30,
+                            49,
+                            36,
+                            11,
+                            6,
+                            3,
+                            0,
+                            42,
+                            51,
+                            22,
+                            60,
+                            64,
+                            46,
+                            45,
+                            0,
+                            62,
+                            32,
+                            30,
+                            52,
+                            20,
+                            50,
+                            42,
+                            3,
+                            67,
+                            16,
+                            7,
+                            39,
+                            27,
+                            47,
+                            34,
+                            13,
+                            20,
+                            43,
+                            19,
+                            45,
+                            1,
+                            63,
+                            47,
+                            24,
+                            2,
+                            43,
+                            50,
+                            1,
+                            45,
+                            62,
+                            13,
+                            60,
+                            26,
+                            21,
+                            1
+                        ],
+                        "IsReady": true
+                    },
+                    {
+                        "PlayerID": 2,
+                        "CardIDs": [
+                            24,
+                            48,
+                            41,
+                            22,
+                            51,
+                            19,
+                            34,
+                            25,
+                            10,
+                            13,
+                            11,
+                            27,
+                            28,
+                            68,
+                            2,
+                            35,
+                            25,
+                            15,
+                            0,
+                            23,
+                            22,
+                            40,
+                            16,
+                            36,
+                            16,
+                            49,
+                            23,
+                            54,
+                            61,
+                            32,
+                            4,
+                            56,
+                            43,
+                            22,
+                            63,
+                            4,
+                            56,
+                            1,
+                            58,
+                            15,
+                            59,
+                            25,
+                            14,
+                            30,
+                            36,
+                            41,
+                            23,
+                            36,
+                            2,
+                            41,
+                            39,
+                            52,
+                            45,
+                            2,
+                            4,
+                            30,
+                            49,
+                            38,
+                            62,
+                            13
+                        ],
+                        "IsReady": true
+                    }
+                ],
+                "Battles": [
+                    {
+                        "UpdateID": 4,
+                        "Sides": [
+                            {
+                                "PlayerID": 0,
+                                "Info": {
+                                    "Cards": {
+                                        "Bench": {
+                                            "Slots": [
+                                                {
+                                                    "CardID": 37,
+                                                    "DamageTaken": 0
+                                                }
+                                            ]
+                                        },
+                                        "Hand": {
+                                            "Slots": [
+                                                {
+                                                    "CardID": 15,
+                                                    "DamageTaken": 0
+                                                },
+                                                {
+                                                    "CardID": 65,
+                                                    "DamageTaken": 0
+                                                },
+                                                {
+                                                    "CardID": 35,
+                                                    "DamageTaken": 0
+                                                },
+                                                {
+                                                    "CardID": 47,
+                                                    "DamageTaken": 0
+                                                },
+                                                {
+                                                    "CardID": 17,
+                                                    "DamageTaken": 0
+                                                },
+                                                {
+                                                    "CardID": 19,
+                                                    "DamageTaken": 0
+                                                },
+                                                {
+                                                    "CardID": 7,
+                                                    "DamageTaken": 0
+                                                }
+                                            ]
+                                        },
+                                        "Prizes": {
+                                            "Slots": [
+                                                {
+                                                    "CardID": 57,
+                                                    "DamageTaken": 0
+                                                }
+                                            ]
+                                        },
+                                        "TakePile": {
+                                            "Slots": [
+                                                {
+                                                    "CardID": 20,
+                                                    "DamageTaken": 0
+                                                },
+                                                {
+                                                    "CardID": 4,
+                                                    "DamageTaken": 0
+                                                },
+                                                {
+                                                    "CardID": 42,
+                                                    "DamageTaken": 0
+                                                },
+                                                {
+                                                    "CardID": 21,
+                                                    "DamageTaken": 0
+                                                },
+                                                {
+                                                    "CardID": 18,
+                                                    "DamageTaken": 0
+                                                },
+                                                {
+                                                    "CardID": 13,
+                                                    "DamageTaken": 0
+                                                },
+                                                {
+                                                    "CardID": 67,
+                                                    "DamageTaken": 0
+                                                },
+                                                {
+                                                    "CardID": 62,
+                                                    "DamageTaken": 0
+                                                },
+                                                {
+                                                    "CardID": 1,
+                                                    "DamageTaken": 0
+                                                },
+                                                {
+                                                    "CardID": 28,
+                                                    "DamageTaken": 0
+                                                },
+                                                {
+                                                    "CardID": 46,
+                                                    "DamageTaken": 0
+                                                },
+                                                {
+                                                    "CardID": 47,
+                                                    "DamageTaken": 0
+                                                },
+                                                {
+                                                    "CardID": 1,
+                                                    "DamageTaken": 0
+                                                },
+                                                {
+                                                    "CardID": 44,
+                                                    "DamageTaken": 0
+                                                },
+                                                {
+                                                    "CardID": 62,
+                                                    "DamageTaken": 0
+                                                },
+                                                {
+                                                    "CardID": 6,
+                                                    "DamageTaken": 0
+                                                },
+                                                {
+                                                    "CardID": 36,
+                                                    "DamageTaken": 0
+                                                },
+                                                {
+                                                    "CardID": 43,
+                                                    "DamageTaken": 0
+                                                },
+                                                {
+                                                    "CardID": 39,
+                                                    "DamageTaken": 0
+                                                },
+                                                {
+                                                    "CardID": 37,
+                                                    "DamageTaken": 0
+                                                },
+                                                {
+                                                    "CardID": 30,
+                                                    "DamageTaken": 0
+                                                },
+                                                {
+                                                    "CardID": 44,
+                                                    "DamageTaken": 0
+                                                },
+                                                {
+                                                    "CardID": 40,
+                                                    "DamageTaken": 0
+                                                },
+                                                {
+                                                    "CardID": 65,
+                                                    "DamageTaken": 0
+                                                },
+                                                {
+                                                    "CardID": 16,
+                                                    "DamageTaken": 0
+                                                },
+                                                {
+                                                    "CardID": 0,
+                                                    "DamageTaken": 0
+                                                },
+                                                {
+                                                    "CardID": 60,
+                                                    "DamageTaken": 0
+                                                },
+                                                {
+                                                    "CardID": 24,
+                                                    "DamageTaken": 0
+                                                },
+                                                {
+                                                    "CardID": 65,
+                                                    "DamageTaken": 0
+                                                },
+                                                {
+                                                    "CardID": 29,
+                                                    "DamageTaken": 0
+                                                },
+                                                {
+                                                    "CardID": 47,
+                                                    "DamageTaken": 0
+                                                },
+                                                {
+                                                    "CardID": 60,
+                                                    "DamageTaken": 0
+                                                },
+                                                {
+                                                    "CardID": 62,
+                                                    "DamageTaken": 0
+                                                },
+                                                {
+                                                    "CardID": 66,
+                                                    "DamageTaken": 0
+                                                },
+                                                {
+                                                    "CardID": 25,
+                                                    "DamageTaken": 0
+                                                },
+                                                {
+                                                    "CardID": 51,
+                                                    "DamageTaken": 0
+                                                },
+                                                {
+                                                    "CardID": 34,
+                                                    "DamageTaken": 0
+                                                },
+                                                {
+                                                    "CardID": 59,
+                                                    "DamageTaken": 0
+                                                },
+                                                {
+                                                    "CardID": 17,
+                                                    "DamageTaken": 0
+                                                },
+                                                {
+                                                    "CardID": 19,
+                                                    "DamageTaken": 0
+                                                },
+                                                {
+                                                    "CardID": 1,
+                                                    "DamageTaken": 0
+                                                },
+                                                {
+                                                    "CardID": 4,
+                                                    "DamageTaken": 0
+                                                },
+                                                {
+                                                    "CardID": 30,
+                                                    "DamageTaken": 0
+                                                },
+                                                {
+                                                    "CardID": 68,
+                                                    "DamageTaken": 0
+                                                },
+                                                {
+                                                    "CardID": 22,
+                                                    "DamageTaken": 0
+                                                },
+                                                {
+                                                    "CardID": 50,
+                                                    "DamageTaken": 0
+                                                },
+                                                {
+                                                    "CardID": 68,
+                                                    "DamageTaken": 0
+                                                },
+                                                {
+                                                    "CardID": 29,
+                                                    "DamageTaken": 0
+                                                },
+                                                {
+                                                    "CardID": 51,
+                                                    "DamageTaken": 0
+                                                },
+                                                {
+                                                    "CardID": 4,
+                                                    "DamageTaken": 0
+                                                },
+                                                {
+                                                    "CardID": 34,
+                                                    "DamageTaken": 0
+                                                }
+                                            ]
+                                        },
+                                        "ThrowPile": {
+                                            "Slots": null
+                                        }
+                                    }
+                                }
+                            },
+                            {
+                                "PlayerID": 2,
+                                "Info": {
+                                    "Cards": {
+                                        "Bench": {
+                                            "Slots": [
+                                                {
+                                                    "CardID": 10,
+                                                    "DamageTaken": 0
+                                                }
+                                            ]
+                                        },
+                                        "Hand": {
+                                            "Slots": [
+                                                {
+                                                    "CardID": 2,
+                                                    "DamageTaken": 0
+                                                },
+                                                {
+                                                    "CardID": 43,
+                                                    "DamageTaken": 0
+                                                },
+                                                {
+                                                    "CardID": 15,
+                                                    "DamageTaken": 0
+                                                },
+                                                {
+                                                    "CardID": 27,
+                                                    "DamageTaken": 0
+                                                },
+                                                {
+                                                    "CardID": 23,
+                                                    "DamageTaken": 0
+                                                },
+                                                {
+                                                    "CardID": 61,
+                                                    "DamageTaken": 0
+                                                }
+                                            ]
+                                        },
+                                        "Prizes": {
+                                            "Slots": [
+                                                {
+                                                    "CardID": 22,
+                                                    "DamageTaken": 0
+                                                }
+                                            ]
+                                        },
+                                        "TakePile": {
+                                            "Slots": [
+                                                {
+                                                    "CardID": 34,
+                                                    "DamageTaken": 0
+                                                },
+                                                {
+                                                    "CardID": 1,
+                                                    "DamageTaken": 0
+                                                },
+                                                {
+                                                    "CardID": 13,
+                                                    "DamageTaken": 0
+                                                },
+                                                {
+                                                    "CardID": 36,
+                                                    "DamageTaken": 0
+                                                },
+                                                {
+                                                    "CardID": 41,
+                                                    "DamageTaken": 0
+                                                },
+                                                {
+                                                    "CardID": 4,
+                                                    "DamageTaken": 0
+                                                },
+                                                {
+                                                    "CardID": 62,
+                                                    "DamageTaken": 0
+                                                },
+                                                {
+                                                    "CardID": 15,
+                                                    "DamageTaken": 0
+                                                },
+                                                {
+                                                    "CardID": 30,
+                                                    "DamageTaken": 0
+                                                },
+                                                {
+                                                    "CardID": 45,
+                                                    "DamageTaken": 0
+                                                },
+                                                {
+                                                    "CardID": 0,
+                                                    "DamageTaken": 0
+                                                },
+                                                {
+                                                    "CardID": 11,
+                                                    "DamageTaken": 0
+                                                },
+                                                {
+                                                    "CardID": 36,
+                                                    "DamageTaken": 0
+                                                },
+                                                {
+                                                    "CardID": 39,
+                                                    "DamageTaken": 0
+                                                },
+                                                {
+                                                    "CardID": 23,
+                                                    "DamageTaken": 0
+                                                },
+                                                {
+                                                    "CardID": 16,
+                                                    "DamageTaken": 0
+                                                },
+                                                {
+                                                    "CardID": 36,
+                                                    "DamageTaken": 0
+                                                },
+                                                {
+                                                    "CardID": 16,
+                                                    "DamageTaken": 0
+                                                },
+                                                {
+                                                    "CardID": 24,
+                                                    "DamageTaken": 0
+                                                },
+                                                {
+                                                    "CardID": 35,
+                                                    "DamageTaken": 0
+                                                },
+                                                {
+                                                    "CardID": 30,
+                                                    "DamageTaken": 0
+                                                },
+                                                {
+                                                    "CardID": 41,
+                                                    "DamageTaken": 0
+                                                },
+                                                {
+                                                    "CardID": 63,
+                                                    "DamageTaken": 0
+                                                },
+                                                {
+                                                    "CardID": 25,
+                                                    "DamageTaken": 0
+                                                },
+                                                {
+                                                    "CardID": 38,
+                                                    "DamageTaken": 0
+                                                },
+                                                {
+                                                    "CardID": 2,
+                                                    "DamageTaken": 0
+                                                },
+                                                {
+                                                    "CardID": 54,
+                                                    "DamageTaken": 0
+                                                },
+                                                {
+                                                    "CardID": 59,
+                                                    "DamageTaken": 0
+                                                },
+                                                {
+                                                    "CardID": 32,
+                                                    "DamageTaken": 0
+                                                },
+                                                {
+                                                    "CardID": 41,
+                                                    "DamageTaken": 0
+                                                },
+                                                {
+                                                    "CardID": 2,
+                                                    "DamageTaken": 0
+                                                },
+                                                {
+                                                    "CardID": 49,
+                                                    "DamageTaken": 0
+                                                },
+                                                {
+                                                    "CardID": 40,
+                                                    "DamageTaken": 0
+                                                },
+                                                {
+                                                    "CardID": 58,
+                                                    "DamageTaken": 0
+                                                },
+                                                {
+                                                    "CardID": 51,
+                                                    "DamageTaken": 0
+                                                },
+                                                {
+                                                    "CardID": 4,
+                                                    "DamageTaken": 0
+                                                },
+                                                {
+                                                    "CardID": 49,
+                                                    "DamageTaken": 0
+                                                },
+                                                {
+                                                    "CardID": 25,
+                                                    "DamageTaken": 0
+                                                },
+                                                {
+                                                    "CardID": 48,
+                                                    "DamageTaken": 0
+                                                },
+                                                {
+                                                    "CardID": 56,
+                                                    "DamageTaken": 0
+                                                },
+                                                {
+                                                    "CardID": 22,
+                                                    "DamageTaken": 0
+                                                },
+                                                {
+                                                    "CardID": 28,
+                                                    "DamageTaken": 0
+                                                },
+                                                {
+                                                    "CardID": 13,
+                                                    "DamageTaken": 0
+                                                },
+                                                {
+                                                    "CardID": 23,
+                                                    "DamageTaken": 0
+                                                },
+                                                {
+                                                    "CardID": 25,
+                                                    "DamageTaken": 0
+                                                },
+                                                {
+                                                    "CardID": 22,
+                                                    "DamageTaken": 0
+                                                },
+                                                {
+                                                    "CardID": 68,
+                                                    "DamageTaken": 0
+                                                },
+                                                {
+                                                    "CardID": 14,
+                                                    "DamageTaken": 0
+                                                },
+                                                {
+                                                    "CardID": 52,
+                                                    "DamageTaken": 0
+                                                },
+                                                {
+                                                    "CardID": 4,
+                                                    "DamageTaken": 0
+                                                },
+                                                {
+                                                    "CardID": 56,
+                                                    "DamageTaken": 0
+                                                },
+                                                {
+                                                    "CardID": 19,
+                                                    "DamageTaken": 0
+                                                }
+                                            ]
+                                        },
+                                        "ThrowPile": {
+                                            "Slots": null
+                                        }
+                                    }
+                                }
+                            }
+                        ],
+                        "Info": {
+                            "Turn": 1,
+                            "IsStarted": true,
+                            "IsFinished": false,
+                            "Winner": 0
+                        }
+                    }
+                ],
+                "IsStarted": true
+            }
+        }
+    ],
+    "Players": [
+        {
+            "Name": "dj leo"
+        },
+        {
+            "Name": "funky kong"
+        },
+        {
+            "Name": "rick"
+        }
+    ],
+    "Cards": [
+        {
+            "Identity": {
+                "Title": "Charizard",
+                "Description": "",
+                "Type": "",
+                "URL": ""
+            },
+            "Rank": {
+                "Ranking": "",
+                "Level": 76,
+                "HP": 120
+            },
+            "Attacks": [
+                {
+                    "Name": "Fire Spin",
+                    "Cost": 4,
+                    "Damage": 100
+                }
+            ]
+        },
+        {
+            "Identity": {
+                "Title": "Machamp",
+                "Description": "",
+                "Type": "",
+                "URL": ""
+            },
+            "Rank": {
+                "Ranking": "",
+                "Level": 67,
+                "HP": 100
+            },
+            "Attacks": [
+                {
+                    "Name": "Seismic Toss",
+                    "Cost": 4,
+                    "Damage": 60
+                }
+            ]
+        },
+        {
+            "Identity": {
+                "Title": "Venusaur",
+                "Description": "",
+                "Type": "",
+                "URL": ""
+            },
+            "Rank": {
+                "Ranking": "",
+                "Level": 67,
+                "HP": 100
+            },
+            "Attacks": [
+                {
+                    "Name": "Solarbeam",
+                    "Cost": 4,
+                    "Damage": 60
+                }
+            ]
+        },
+        {
+            "Identity": {
+                "Title": "Zapdos",
+                "Description": "",
+                "Type": "",
+                "URL": ""
+            },
+            "Rank": {
+                "Ranking": "",
+                "Level": 64,
+                "HP": 90
+            },
+            "Attacks": [
+                {
+                    "Name": "Thunder",
+                    "Cost": 4,
+                    "Damage": 60
+                },
+                {
+                    "Name": "Thunderbolt",
+                    "Cost": 4,
+                    "Damage": 100
+                }
+            ]
+        },
+        {
+            "Identity": {
+                "Title": "Chansey",
+                "Description": "",
+                "Type": "",
+                "URL": ""
+            },
+            "Rank": {
+                "Ranking": "",
+                "Level": 55,
+                "HP": 120
+            },
+            "Attacks": [
+                {
+                    "Name": "Double-edge",
+                    "Cost": 4,
+                    "Damage": 80
+                }
+            ]
+        },
+        {
+            "Identity": {
+                "Title": "Mewtwo",
+                "Description": "",
+                "Type": "",
+                "URL": ""
+            },
+            "Rank": {
+                "Ranking": "",
+                "Level": 53,
+                "HP": 60
+            },
+            "Attacks": []
+        },
+        {
+            "Identity": {
+                "Title": "Blastoise",
+                "Description": "",
+                "Type": "",
+                "URL": ""
+            },
+            "Rank": {
+                "Ranking": "",
+                "Level": 52,
+                "HP": 100
+            },
+            "Attacks": []
+        },
+        {
+            "Identity": {
+                "Title": "Poliwrath",
+                "Description": "",
+                "Type": "",
+                "URL": ""
+            },
+            "Rank": {
+                "Ranking": "",
+                "Level": 48,
+                "HP": 90
+            },
+            "Attacks": [
+                {
+                    "Name": "Whirlpool",
+                    "Cost": 4,
+                    "Damage": 40
+                }
+            ]
+        },
+        {
+            "Identity": {
+                "Title": "Arcanine",
+                "Description": "",
+                "Type": "",
+                "URL": ""
+            },
+            "Rank": {
+                "Ranking": "",
+                "Level": 45,
+                "HP": 100
+            },
+            "Attacks": [
+                {
+                    "Name": "Flamethrower",
+                    "Cost": 3,
+                    "Damage": 50
+                },
+                {
+                    "Name": "Take Down",
+                    "Cost": 4,
+                    "Damage": 80
+                }
+            ]
+        },
+        {
+            "Identity": {
+                "Title": "Alakazam",
+                "Description": "",
+                "Type": "",
+                "URL": ""
+            },
+            "Rank": {
+                "Ranking": "",
+                "Level": 42,
+                "HP": 80
+            },
+            "Attacks": [
+                {
+                    "Name": "Confuse Ray",
+                    "Cost": 3,
+                    "Damage": 30
+                }
+            ]
+        },
+        {
+            "Identity": {
+                "Title": "Dewgong",
+                "Description": "",
+                "Type": "",
+                "URL": ""
+            },
+            "Rank": {
+                "Ranking": "",
+                "Level": 42,
+                "HP": 80
+            },
+            "Attacks": [
+                {
+                    "Name": "Aurora Beam",
+                    "Cost": 3,
+                    "Damage": 50
+                },
+                {
+                    "Name": "Ice Beam",
+                    "Cost": 4,
+                    "Damage": 30
+                }
+            ]
+        },
+        {
+            "Identity": {
+                "Title": "Gyarados",
+                "Description": "",
+                "Type": "",
+                "URL": ""
+            },
+            "Rank": {
+                "Ranking": "",
+                "Level": 41,
+                "HP": 100
+            },
+            "Attacks": [
+                {
+                    "Name": "Dragon Rage",
+                    "Cost": 3,
+                    "Damage": 50
+                },
+                {
+                    "Name": "Bubblebeam",
+                    "Cost": 4,
+                    "Damage": 40
+                }
+            ]
+        },
+        {
+            "Identity": {
+                "Title": "Raticate",
+                "Description": "",
+                "Type": "",
+                "URL": ""
+            },
+            "Rank": {
+                "Ranking": "",
+                "Level": 41,
+                "HP": 60
+            },
+            "Attacks": [
+                {
+                    "Name": "Bite",
+                    "Cost": 1,
+                    "Damage": 20
+                }
+            ]
+        },
+        {
+            "Identity": {
+                "Title": "Raichu",
+                "Description": "",
+                "Type": "",
+                "URL": ""
+            },
+            "Rank": {
+                "Ranking": "",
+                "Level": 40,
+                "HP": 80
+            },
+            "Attacks": [
+                {
+                    "Name": "Agility",
+                    "Cost": 3,
+                    "Damage": 20
+                },
+                {
+                    "Name": "Thunder",
+                    "Cost": 4,
+                    "Damage": 60
+                }
+            ]
+        },
+        {
+            "Identity": {
+                "Title": "Electrode",
+                "Description": "",
+                "Type": "",
+                "URL": ""
+            },
+            "Rank": {
+                "Ranking": "",
+                "Level": 40,
+                "HP": 80
+            },
+            "Attacks": [
+                {
+                    "Name": "Electric Shock",
+                    "Cost": 3,
+                    "Damage": 50
+                }
+            ]
+        },
+        {
+            "Identity": {
+                "Title": "Machoke",
+                "Description": "",
+                "Type": "",
+                "URL": ""
+            },
+            "Rank": {
+                "Ranking": "",
+                "Level": 40,
+                "HP": 80
+            },
+            "Attacks": [
+                {
+                    "Name": "Submission",
+                    "Cost": 4,
+                    "Damage": 60
+                }
+            ]
+        },
+        {
+            "Identity": {
+                "Title": "Kadabra",
+                "Description": "",
+                "Type": "",
+                "URL": ""
+            },
+            "Rank": {
+                "Ranking": "",
+                "Level": 38,
+                "HP": 60
+            },
+            "Attacks": [
+                {
+                    "Name": "Super Psy",
+                    "Cost": 3,
+                    "Damage": 50
+                }
+            ]
+        },
+        {
+            "Identity": {
+                "Title": "Dugtrio",
+                "Description": "",
+                "Type": "",
+                "URL": ""
+            },
+            "Rank": {
+                "Ranking": "",
+                "Level": 36,
+                "HP": 70
+            },
+            "Attacks": [
+                {
+                    "Name": "Slash",
+                    "Cost": 3,
+                    "Damage": 40
+                },
+                {
+                    "Name": "Earthquake",
+                    "Cost": 4,
+                    "Damage": 70
+                }
+            ]
+        },
+        {
+            "Identity": {
+                "Title": "Pidgeotto",
+                "Description": "",
+                "Type": "",
+                "URL": ""
+            },
+            "Rank": {
+                "Ranking": "",
+                "Level": 36,
+                "HP": 60
+            },
+            "Attacks": [
+                {
+                    "Name": "Whirlwind",
+                    "Cost": 2,
+                    "Damage": 20
+                }
+            ]
+        },
+        {
+            "Identity": {
+                "Title": "Electabuzz",
+                "Description": "",
+                "Type": "",
+                "URL": ""
+            },
+            "Rank": {
+                "Ranking": "",
+                "Level": 35,
+                "HP": 70
+            },
+            "Attacks": [
+                {
+                    "Name": "Thundershock",
+                    "Cost": 1,
+                    "Damage": 10
+                }
+            ]
+        },
+        {
+            "Identity": {
+                "Title": "Hitmonchan",
+                "Description": "",
+                "Type": "",
+                "URL": ""
+            },
+            "Rank": {
+                "Ranking": "",
+                "Level": 33,
+                "HP": 70
+            },
+            "Attacks": [
+                {
+                    "Name": "Jab",
+                    "Cost": 1,
+                    "Damage": 20
+                },
+                {
+                    "Name": "Special Punch",
+                    "Cost": 3,
+                    "Damage": 40
+                }
+            ]
+        },
+        {
+            "Identity": {
+                "Title": "Dragonair",
+                "Description": "",
+                "Type": "",
+                "URL": ""
+            },
+            "Rank": {
+                "Ranking": "",
+                "Level": 33,
+                "HP": 80
+            },
+            "Attacks": [
+                {
+                    "Name": "Hyper Beam",
+                    "Cost": 4,
+                    "Damage": 20
+                }
+            ]
+        },
+        {
+            "Identity": {
+                "Title": "Ninetales",
+                "Description": "",
+                "Type": "",
+                "URL": ""
+            },
+            "Rank": {
+                "Ranking": "",
+                "Level": 32,
+                "HP": 80
+            },
+            "Attacks": [
+                {
+                    "Name": "Fire Blast",
+                    "Cost": 4,
+                    "Damage": 80
+                }
+            ]
+        },
+        {
+            "Identity": {
+                "Title": "Beedrill",
+                "Description": "",
+                "Type": "",
+                "URL": ""
+            },
+            "Rank": {
+                "Ranking": "",
+                "Level": 32,
+                "HP": 80
+            },
+            "Attacks": [
+                {
+                    "Name": "Poison Sting",
+                    "Cost": 3,
+                    "Damage": 40
+                }
+            ]
+        },
+        {
+            "Identity": {
+                "Title": "Charmeleon",
+                "Description": "",
+                "Type": "",
+                "URL": ""
+            },
+            "Rank": {
+                "Ranking": "",
+                "Level": 32,
+                "HP": 80
+            },
+            "Attacks": [
+                {
+                    "Name": "Slash",
+                    "Cost": 3,
+                    "Damage": 30
+                },
+                {
+                    "Name": "Flamethrower",
+                    "Cost": 3,
+                    "Damage": 50
+                }
+            ]
+        },
+        {
+            "Identity": {
+                "Title": "Magneton",
+                "Description": "",
+                "Type": "",
+                "URL": ""
+            },
+            "Rank": {
+                "Ranking": "",
+                "Level": 28,
+                "HP": 60
+            },
+            "Attacks": [
+                {
+                    "Name": "Thunder Wave",
+                    "Cost": 3,
+                    "Damage": 30
+                },
+                {
+                    "Name": "Selfdestruct",
+                    "Cost": 4,
+                    "Damage": 80
+                }
+            ]
+        },
+        {
+            "Identity": {
+                "Title": "Poliwhirl",
+                "Description": "",
+                "Type": "",
+                "URL": ""
+            },
+            "Rank": {
+                "Ranking": "",
+                "Level": 28,
+                "HP": 60
+            },
+            "Attacks": []
+        },
+        {
+            "Identity": {
+                "Title": "Starmie",
+                "Description": "",
+                "Type": "",
+                "URL": ""
+            },
+            "Rank": {
+                "Ranking": "",
+                "Level": 28,
+                "HP": 60
+            },
+            "Attacks": [
+                {
+                    "Name": "Star Freeze",
+                    "Cost": 3,
+                    "Damage": 20
+                }
+            ]
+        },
+        {
+            "Identity": {
+                "Title": "Nidorino",
+                "Description": "",
+                "Type": "",
+                "URL": ""
+            },
+            "Rank": {
+                "Ranking": "",
+                "Level": 25,
+                "HP": 60
+            },
+            "Attacks": [
+                {
+                    "Name": "Horn Drill",
+                    "Cost": 4,
+                    "Damage": 50
+                }
+            ]
+        },
+        {
+            "Identity": {
+                "Title": "Magmar",
+                "Description": "",
+                "Type": "",
+                "URL": ""
+            },
+            "Rank": {
+                "Ranking": "",
+                "Level": 24,
+                "HP": 50
+            },
+            "Attacks": [
+                {
+                    "Name": "Fire Punch",
+                    "Cost": 2,
+                    "Damage": 30
+                },
+                {
+                    "Name": "Flamethrower",
+                    "Cost": 3,
+                    "Damage": 50
+                }
+            ]
+        },
+        {
+            "Identity": {
+                "Title": "Nidoking",
+                "Description": "",
+                "Type": "",
+                "URL": ""
+            },
+            "Rank": {
+                "Ranking": "",
+                "Level": 23,
+                "HP": 90
+            },
+            "Attacks": [
+                {
+                    "Name": "Toxic",
+                    "Cost": 3,
+                    "Damage": 40
+                }
+            ]
+        },
+        {
+            "Identity": {
+                "Title": "Jynx",
+                "Description": "",
+                "Type": "",
+                "URL": ""
+            },
+            "Rank": {
+                "Ranking": "",
+                "Level": 23,
+                "HP": 70
+            },
+            "Attacks": []
+        },
+        {
+            "Identity": {
+                "Title": "Kakuna",
+                "Description": "",
+                "Type": "",
+                "URL": ""
+            },
+            "Rank": {
+                "Ranking": "",
+                "Level": 23,
+                "HP": 80
+            },
+            "Attacks": [
+                {
+                    "Name": "Poisonpowder",
+                    "Cost": 2,
+                    "Damage": 20
+                }
+            ]
+        },
+        {
+            "Identity": {
+                "Title": "Haunter",
+                "Description": "",
+                "Type": "",
+                "URL": ""
+            },
+            "Rank": {
+                "Ranking": "",
+                "Level": 22,
+                "HP": 60
+            },
+            "Attacks": [
+                {
+                    "Name": "Dream Eater",
+                    "Cost": 2,
+                    "Damage": 50
+                }
+            ]
+        },
+        {
+            "Identity": {
+                "Title": "Wartortle",
+                "Description": "",
+                "Type": "",
+                "URL": ""
+            },
+            "Rank": {
+                "Ranking": "",
+                "Level": 22,
+                "HP": 70
+            },
+            "Attacks": [
+                {
+                    "Name": "Bite",
+                    "Cost": 3,
+                    "Damage": 40
+                }
+            ]
+        },
+        {
+            "Identity": {
+                "Title": "Metapod",
+                "Description": "",
+                "Type": "",
+                "URL": ""
+            },
+            "Rank": {
+                "Ranking": "",
+                "Level": 21,
+                "HP": 70
+            },
+            "Attacks": [
+                {
+                    "Name": "Stun Spore",
+                    "Cost": 2,
+                    "Damage": 20
+                }
+            ]
+        },
+        {
+            "Identity": {
+                "Title": "Farfetch'd",
+                "Description": "",
+                "Type": "",
+                "URL": ""
+            },
+            "Rank": {
+                "Ranking": "",
+                "Level": 20,
+                "HP": 50
+            },
+            "Attacks": [
+                {
+                    "Name": "Leek Slap",
+                    "Cost": 1,
+                    "Damage": 30
+                },
+                {
+                    "Name": "Pot Smash",
+                    "Cost": 3,
+                    "Damage": 30
+                }
+            ]
+        },
+        {
+            "Identity": {
+                "Title": "Ivysaur",
+                "Description": "",
+                "Type": "",
+                "URL": ""
+            },
+            "Rank": {
+                "Ranking": "",
+                "Level": 20,
+                "HP": 60
+            },
+            "Attacks": [
+                {
+                    "Name": "Vine Whip",
+                    "Cost": 3,
+                    "Damage": 30
+                },
+                {
+                    "Name": "Poisonpowder",
+                    "Cost": 3,
+                    "Damage": 30
+                }
+            ]
+        },
+        {
+            "Identity": {
+                "Title": "Machop",
+                "Description": "",
+                "Type": "",
+                "URL": ""
+            },
+            "Rank": {
+                "Ranking": "",
+                "Level": 20,
+                "HP": 50
+            },
+            "Attacks": [
+                {
+                    "Name": "Low Kick",
+                    "Cost": 1,
+                    "Damage": 20
+                }
+            ]
+        },
+        {
+            "Identity": {
+                "Title": "Nidoran♂",
+                "Description": "",
+                "Type": "",
+                "URL": ""
+            },
+            "Rank": {
+                "Ranking": "",
+                "Level": 20,
+                "HP": 40
+            },
+            "Attacks": [
+                {
+                    "Name": "Horn Hazard",
+                    "Cost": 1,
+                    "Damage": 30
+                }
+            ]
+        },
+        {
+            "Identity": {
+                "Title": "Growlithe",
+                "Description": "",
+                "Type": "",
+                "URL": ""
+            },
+            "Rank": {
+                "Ranking": "",
+                "Level": 18,
+                "HP": 60
+            },
+            "Attacks": [
+                {
+                    "Name": "Flare",
+                    "Cost": 2,
+                    "Damage": 20
+                }
+            ]
+        },
+        {
+            "Identity": {
+                "Title": "Staryu",
+                "Description": "",
+                "Type": "",
+                "URL": ""
+            },
+            "Rank": {
+                "Ranking": "",
+                "Level": 15,
+                "HP": 40
+            },
+            "Attacks": [
+                {
+                    "Name": "Slap",
+                    "Cost": 1,
+                    "Damage": 20
+                }
+            ]
+        },
+        {
+            "Identity": {
+                "Title": "Clefairy",
+                "Description": "",
+                "Type": "",
+                "URL": ""
+            },
+            "Rank": {
+                "Ranking": "",
+                "Level": 14,
+                "HP": 40
+            },
+            "Attacks": []
+        },
+        {
+            "Identity": {
+                "Title": "Bulbasaur",
+                "Description": "",
+                "Type": "",
+                "URL": ""
+            },
+            "Rank": {
+                "Ranking": "",
+                "Level": 13,
+                "HP": 40
+            },
+            "Attacks": [
+                {
+                    "Name": "Leech Seed",
+                    "Cost": 2,
+                    "Damage": 20
+                }
+            ]
+        },
+        {
+            "Identity": {
+                "Title": "Caterpie",
+                "Description": "",
+                "Type": "",
+                "URL": ""
+            },
+            "Rank": {
+                "Ranking": "",
+                "Level": 13,
+                "HP": 40
+            },
+            "Attacks": [
+                {
+                    "Name": "String Shot",
+                    "Cost": 1,
+                    "Damage": 10
+                }
+            ]
+        },
+        {
+            "Identity": {
+                "Title": "Koffing",
+                "Description": "",
+                "Type": "",
+                "URL": ""
+            },
+            "Rank": {
+                "Ranking": "",
+                "Level": 13,
+                "HP": 50
+            },
+            "Attacks": [
+                {
+                    "Name": "Foul Gas",
+                    "Cost": 2,
+                    "Damage": 10
+                }
+            ]
+        },
+        {
+            "Identity": {
+                "Title": "Magnemite",
+                "Description": "",
+                "Type": "",
+                "URL": ""
+            },
+            "Rank": {
+                "Ranking": "",
+                "Level": 13,
+                "HP": 40
+            },
+            "Attacks": [
+                {
+                    "Name": "Thunder Wave",
+                    "Cost": 1,
+                    "Damage": 10
+                },
+                {
+                    "Name": "Selfdestruct",
+                    "Cost": 2,
+                    "Damage": 40
+                }
+            ]
+        },
+        {
+            "Identity": {
+                "Title": "Poliwag",
+                "Description": "",
+                "Type": "",
+                "URL": ""
+            },
+            "Rank": {
+                "Ranking": "",
+                "Level": 13,
+                "HP": 40
+            },
+            "Attacks": []
+        },
+        {
+            "Identity": {
+                "Title": "Porygon",
+                "Description": "",
+                "Type": "",
+                "URL": ""
+            },
+            "Rank": {
+                "Ranking": "",
+                "Level": 12,
+                "HP": 30
+            },
+            "Attacks": []
+        },
+        {
+            "Identity": {
+                "Title": "Seel",
+                "Description": "",
+                "Type": "",
+                "URL": ""
+            },
+            "Rank": {
+                "Ranking": "",
+                "Level": 12,
+                "HP": 60
+            },
+            "Attacks": [
+                {
+                    "Name": "Headbutt",
+                    "Cost": 1,
+                    "Damage": 10
+                }
+            ]
+        },
+        {
+            "Identity": {
+                "Title": "Onix",
+                "Description": "",
+                "Type": "",
+                "URL": ""
+            },
+            "Rank": {
+                "Ranking": "",
+                "Level": 12,
+                "HP": 90
+            },
+            "Attacks": [
+                {
+                    "Name": "Rock Throw",
+                    "Cost": 1,
+                    "Damage": 10
+                }
+            ]
+        },
+        {
+            "Identity": {
+                "Title": "Pikachu",
+                "Description": "",
+                "Type": "",
+                "URL": ""
+            },
+            "Rank": {
+                "Ranking": "",
+                "Level": 12,
+                "HP": 40
+            },
+            "Attacks": [
+                {
+                    "Name": "Gnaw",
+                    "Cost": 1,
+                    "Damage": 10
+                },
+                {
+                    "Name": "Thunder Jolt",
+                    "Cost": 2,
+                    "Damage": 30
+                }
+            ]
+        },
+        {
+            "Identity": {
+                "Title": "Sandshrew",
+                "Description": "",
+                "Type": "",
+                "URL": ""
+            },
+            "Rank": {
+                "Ranking": "",
+                "Level": 12,
+                "HP": 40
+            },
+            "Attacks": [
+                {
+                    "Name": "Sand-attack",
+                    "Cost": 1,
+                    "Damage": 10
+                }
+            ]
+        },
+        {
+            "Identity": {
+                "Title": "Weedle",
+                "Description": "",
+                "Type": "",
+                "URL": ""
+            },
+            "Rank": {
+                "Ranking": "",
+                "Level": 12,
+                "HP": 40
+            },
+            "Attacks": [
+                {
+                    "Name": "Poison Sting",
+                    "Cost": 1,
+                    "Damage": 10
+                }
+            ]
+        },
+        {
+            "Identity": {
+                "Title": "Vulpix",
+                "Description": "",
+                "Type": "",
+                "URL": ""
+            },
+            "Rank": {
+                "Ranking": "",
+                "Level": 11,
+                "HP": 50
+            },
+            "Attacks": [
+                {
+                    "Name": "Confuse Ray",
+                    "Cost": 2,
+                    "Damage": 10
+                }
+            ]
+        },
+        {
+            "Identity": {
+                "Title": "Dratini",
+                "Description": "",
+                "Type": "",
+                "URL": ""
+            },
+            "Rank": {
+                "Ranking": "",
+                "Level": 10,
+                "HP": 40
+            },
+            "Attacks": [
+                {
+                    "Name": "Pound",
+                    "Cost": 1,
+                    "Damage": 10
+                }
+            ]
+        },
+        {
+            "Identity": {
+                "Title": "Abra",
+                "Description": "",
+                "Type": "",
+                "URL": ""
+            },
+            "Rank": {
+                "Ranking": "",
+                "Level": 10,
+                "HP": 30
+            },
+            "Attacks": [
+                {
+                    "Name": "Psyshock",
+                    "Cost": 1,
+                    "Damage": 10
+                }
+            ]
+        },
+        {
+            "Identity": {
+                "Title": "Charmander",
+                "Description": "",
+                "Type": "",
+                "URL": ""
+            },
+            "Rank": {
+                "Ranking": "",
+                "Level": 10,
+                "HP": 50
+            },
+            "Attacks": [
+                {
+                    "Name": "Scratch",
+                    "Cost": 1,
+                    "Damage": 10
+                },
+                {
+                    "Name": "Ember",
+                    "Cost": 2,
+                    "Damage": 30
+                }
+            ]
+        },
+        {
+            "Identity": {
+                "Title": "Doduo",
+                "Description": "",
+                "Type": "",
+                "URL": ""
+            },
+            "Rank": {
+                "Ranking": "",
+                "Level": 10,
+                "HP": 50
+            },
+            "Attacks": []
+        },
+        {
+            "Identity": {
+                "Title": "Drowzee",
+                "Description": "",
+                "Type": "",
+                "URL": ""
+            },
+            "Rank": {
+                "Ranking": "",
+                "Level": 10,
+                "HP": 50
+            },
+            "Attacks": [
+                {
+                    "Name": "Pound",
+                    "Cost": 1,
+                    "Damage": 10
+                },
+                {
+                    "Name": "Confuse Ray",
+                    "Cost": 2,
+                    "Damage": 10
+                }
+            ]
+        },
+        {
+            "Identity": {
+                "Title": "Ponyta",
+                "Description": "",
+                "Type": "",
+                "URL": ""
+            },
+            "Rank": {
+                "Ranking": "",
+                "Level": 10,
+                "HP": 40
+            },
+            "Attacks": [
+                {
+                    "Name": "Smash Kick",
+                    "Cost": 2,
+                    "Damage": 20
+                },
+                {
+                    "Name": "Flame Tail",
+                    "Cost": 2,
+                    "Damage": 30
+                }
+            ]
+        },
+        {
+            "Identity": {
+                "Title": "Voltorb",
+                "Description": "",
+                "Type": "",
+                "URL": ""
+            },
+            "Rank": {
+                "Ranking": "",
+                "Level": 10,
+                "HP": 40
+            },
+            "Attacks": [
+                {
+                    "Name": "Tackle",
+                    "Cost": 1,
+                    "Damage": 10
+                }
+            ]
+        },
+        {
+            "Identity": {
+                "Title": "Rattata",
+                "Description": "",
+                "Type": "",
+                "URL": ""
+            },
+            "Rank": {
+                "Ranking": "",
+                "Level": 9,
+                "HP": 30
+            },
+            "Attacks": [
+                {
+                    "Name": "Bite",
+                    "Cost": 1,
+                    "Damage": 20
+                }
+            ]
+        },
+        {
+            "Identity": {
+                "Title": "Magikarp",
+                "Description": "",
+                "Type": "",
+                "URL": ""
+            },
+            "Rank": {
+                "Ranking": "",
+                "Level": 8,
+                "HP": 30
+            },
+            "Attacks": [
+                {
+                    "Name": "Tackle",
+                    "Cost": 1,
+                    "Damage": 10
+                }
+            ]
+        },
+        {
+            "Identity": {
+                "Title": "Diglett",
+                "Description": "",
+                "Type": "",
+                "URL": ""
+            },
+            "Rank": {
+                "Ranking": "",
+                "Level": 8,
+                "HP": 30
+            },
+            "Attacks": [
+                {
+                    "Name": "Dig",
+                    "Cost": 1,
+                    "Damage": 10
+                },
+                {
+                    "Name": "Mud Slap",
+                    "Cost": 2,
+                    "Damage": 30
+                }
+            ]
+        },
+        {
+            "Identity": {
+                "Title": "Gastly",
+                "Description": "",
+                "Type": "",
+                "URL": ""
+            },
+            "Rank": {
+                "Ranking": "",
+                "Level": 8,
+                "HP": 30
+            },
+            "Attacks": []
+        },
+        {
+            "Identity": {
+                "Title": "Pidgey",
+                "Description": "",
+                "Type": "",
+                "URL": ""
+            },
+            "Rank": {
+                "Ranking": "",
+                "Level": 8,
+                "HP": 40
+            },
+            "Attacks": [
+                {
+                    "Name": "Whirlwind",
+                    "Cost": 2,
+                    "Damage": 10
+                }
+            ]
+        },
+        {
+            "Identity": {
+                "Title": "Squirtle",
+                "Description": "",
+                "Type": "",
+                "URL": ""
+            },
+            "Rank": {
+                "Ranking": "",
+                "Level": 8,
+                "HP": 40
+            },
+            "Attacks": [
+                {
+                    "Name": "Bubble",
+                    "Cost": 1,
+                    "Damage": 10
+                }
+            ]
+        },
+        {
+            "Identity": {
+                "Title": "Tangela",
+                "Description": "",
+                "Type": "",
+                "URL": ""
+            },
+            "Rank": {
+                "Ranking": "",
+                "Level": 8,
+                "HP": 50
+            },
+            "Attacks": [
+                {
+                    "Name": "Bind",
+                    "Cost": 2,
+                    "Damage": 20
+                },
+                {
+                    "Name": "Poisonpowder",
+                    "Cost": 3,
+                    "Damage": 30
+                }
+            ]
+        }
+    ]
+}

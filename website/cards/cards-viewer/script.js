@@ -5,46 +5,44 @@ async function loadCards() {
     list.innerHTML = '';
 
     if (cards != null) {
-        var prefab = document.getElementById("card-prefab");
+        var attackPrefab = document.getElementById("attack-prefab");
+        var cardPrefab = document.getElementById("card-prefab");
         for (var i = 0; i < cards.length; i++) {
-            var clone = prefab.cloneNode(true);
+            var clone = cardPrefab.cloneNode(true);
             clone.hidden = false;
             clone.dataset.id = cards[i].ID;
             clone.id = `card-${cards[i].ID}`;
-            clone.querySelector("#title-text").innerHTML = cards[i].Info.Title;
-            clone.querySelector("#card-type-text").innerHTML = cards[i].Info.CardType;
-            clone.querySelector("#description-text").innerHTML = cards[i].Info.Description;
-            if (cards[i].Info.Ranking == "Legend") {
+            clone.querySelector("#title-text").innerHTML = cards[i].Identity.Title;
+            clone.querySelector("#card-type-text").innerHTML = cards[i].Identity.Type;
+            clone.querySelector("#description-text").innerHTML = cards[i].Identity.Description;
+            if (cards[i].Rank.Ranking == "Legend") {
                 clone.style.backgroundColor = '#dbc96e';
-            } else if (cards[i].Info.Ranking == "Rare") {
+            } else if (cards[i].Rank.Ranking == "Rare") {
                 clone.style.backgroundColor = '#ababab';
             } else {
                 clone.style.backgroundColor = '#b8946a';
             }
+
+            for (var j = 0; j < cards[i].Attacks.length; j++) {
+                var attack = cards[i].Attacks[j];
+                var attackClone = attackPrefab.cloneNode(true);
+                attackClone.hidden = false;
+                attackClone.id = `attack-${j}`;
+                attackClone.querySelector("#name-text").innerHTML = attack.Name;
+                attackClone.querySelector("#cost-text").innerHTML = attack.Cost;
+                attackClone.querySelector("#damage-text").innerHTML = attack.Damage;
+                clone.querySelector("#attack-list").appendChild(attackClone);
+            }
+
             list.appendChild(clone);
         }
     }
 }
 
-async function createCard() {
-    await sendGET("/create-card/");
-    loadCards();
-}
+
 
 function backToGame() {
     window.location.href = "/website/games/game-viewer/?id=" + gameID;
-}
-
-
-async function removeCard(element) {
-    var id = element.dataset.id;
-    await sendPOST(`/remove-card/${id}`);
-    loadCards();
-}
-
-function editCard(element) {
-    var id = element.dataset.id;
-    window.location.href = `/static/card-studio/card-editor?id=${id}/`;
 }
 
 async function setPlayerName() {

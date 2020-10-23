@@ -3,14 +3,18 @@ package lio
 import (
 	"encoding/json"
 	"net/http"
+	"strconv"
 
 	"github.com/gorilla/securecookie"
+	"github.com/julienschmidt/httprouter"
 )
 
 // HandleGETResponse : adds data to the body of a GET response
 func HandleGETResponse(w http.ResponseWriter, data interface{}) {
 	w.Header().Set("Content-Type", "application/json")
-	json.NewEncoder(w).Encode(data)
+	encoder := json.NewEncoder(w)
+	encoder.SetIndent("", "    ")
+	encoder.Encode(data)
 }
 
 // HandlePOSTResponse : returns a response to a POST request
@@ -51,4 +55,10 @@ func ReadCookie(encoder *securecookie.SecureCookie, r *http.Request, key string)
 		}
 	}
 	return ""
+}
+
+// GetIntParam :
+func GetIntParam(ps httprouter.Params, name string) int {
+	value, _ := strconv.Atoi(ps.ByName(name))
+	return value
 }

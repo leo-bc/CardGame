@@ -1,3 +1,2 @@
-cd go
-go build -o server.exe 
-server.exe
+go build -o app.exe go/server.go
+app.exe

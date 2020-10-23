@@ -1,5 +1,6 @@
 async function showGame() {
     var game = await sendGET("/game/" + gameID);
+    console.log(game);
     var playerListElement = document.getElementById("player-list");
     playerListElement.innerHTML = "";
     if (game != "") {
@@ -9,6 +10,7 @@ async function showGame() {
 
         if (game.IsStarted) {
             var battlesListElement = document.getElementById("battle-list");
+            battlesListElement.innerHTML = "";
             await showGameStarted(game, battlesListElement);
         }
     } else {
@@ -76,8 +78,8 @@ async function showGameStarted(game, listElement) {
         clone.hidden = false;
         clone.dataset.id = i;
         clone.id = `battle-${i}`;
-        clone.querySelector("#first-side-text").innerHTML = battle.FirstSide.PlayerID;
-        clone.querySelector("#second-side-text").innerHTML = battle.SecondSide.PlayerID;
+        clone.querySelector("#first-side-text").innerHTML = battle.Sides[0].PlayerID;
+        clone.querySelector("#second-side-text").innerHTML = battle.Sides[1].PlayerID;
 
         listElement.appendChild(clone);
 
@@ -85,8 +87,14 @@ async function showGameStarted(game, listElement) {
 
 }
 
+function playBattle(element) {
+    console.log(element);
+    var battleID = element.dataset.id;
+    window.location.href = `/website/battles/battle-viewer/?game-id=${gameID}&battle-id=${battleID}`
+}
+
 async function setReady() {
-    await sendPOST("/set-ready/" + gameID);
+    await sendPOST("/game-set-ready/" + gameID);
     await refresh();
 }
 
@@ -110,7 +118,7 @@ async function startPage() {
         const urlParams = new URLSearchParams(queryString);
         gameID = urlParams.get("id");
         if (gameID != null) {
-            showGame(gameID);
+            showGame();
         }
 
         setInterval(refresh, 1000);
@@ -121,13 +129,14 @@ async function startPage() {
 
 var currentPlayer;
 var gameID;
+var updateID = 0;
 
 startPage();
 
 async function refresh() {
-    var updated = await sendGET("/game-updated/" + gameID);
-    if (updated == true) {
-        console.log("UPDATING!");
+    var updateInfo = await sendGET(`/game-updated/${gameID}/${updateID}`);
+    if (updateInfo.IsUpdated == true) {
+        updateID = updateInfo.NewID;
         showGame();
     }
 }
